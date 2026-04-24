@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Сотрудничество | Xoil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #010101; color: #e8e8e8; line-height: 1.5; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        .header {
+            background: #010101;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 12px 0;
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .logo-img { height: 44px; width: auto; filter: brightness(0) invert(1); transition: transform 0.2s ease; }
+        .logo-img:hover { transform: scale(1.02); }
+        .nav-menu { display: flex; gap: 28px; flex-wrap: wrap; }
+        .nav-link { color: #f0f0f0; text-decoration: none; font-weight: 500; transition: all 0.3s ease; font-size: 15px; position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: #FFD700; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: #FFD700; }
+        .contact-header { text-align: right; }
+        .contact-header .phone { font-size: 20px; font-weight: 700; color: #FFD700; text-decoration: none; }
+        .contact-header .small { font-size: 11px; opacity: 0.65; }
+        .round-clock { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); padding: 6px 14px; border-radius: 60px; font-size: 13px; color: #FFD700; margin-left: 12px; }
+        
+        .page-title { text-align: center; padding: 60px 0 30px; }
+        .page-title h1 { font-size: 48px; font-weight: 800; background: linear-gradient(135deg, #FFD700, #FFC107); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Manrope', sans-serif; }
+        .page-title .breadcrumb { color: #FFD700; margin-bottom: 10px; font-size: 14px; }
+        .breadcrumb a { color: #888; text-decoration: none; }
+        .breadcrumb a:hover { color: #FFD700; }
+        
+        .content-card { background: #050505; border-radius: 28px; padding: 48px; border: 1px solid rgba(255, 215, 0, 0.2); margin: 20px 0 60px; }
+        .content-card p { margin-bottom: 24px; font-size: 17px; line-height: 1.7; opacity: 0.9; }
+        .content-card h2 { color: #FFD700; font-size: 28px; margin-bottom: 24px; font-weight: 600; }
+        
+        .contact-block { background: #0a0a0a; border-radius: 24px; padding: 32px; margin-top: 32px; border: 1px solid rgba(255, 215, 0, 0.2); }
+        .contact-block h3 { color: #FFD700; margin-bottom: 20px; font-size: 24px; }
+        .contact-line { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .contact-line i { width: 32px; color: #FFD700; font-size: 20px; }
+        
+        .footer { background: #010101; padding: 40px 0; text-align: center; border-top: 1px solid rgba(255, 215, 0, 0.2); margin-top: 40px; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .header-inner { flex-direction: column; text-align: center; }
+            .contact-header { text-align: center; }
+            .nav-menu { justify-content: center; gap: 20px; }
+            .page-title h1 { font-size: 32px; }
+            .content-card { padding: 28px; }
+        }
+        
+        .btn-back { display: inline-block; background: #FFD700; color: #010101; padding: 12px 28px; border-radius: 60px; text-decoration: none; font-weight: 600; margin-top: 20px; transition: all 0.3s; }
+        .btn-back:hover { background: #FFC107; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <img src="l.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/44x44?text=X'">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="index.html#about" class="nav-link">О нас</a>
+            <a href="index.html#benefits" class="nav-link">Преимущества</a>
+            <a href="index.html#promo" class="nav-link">Акции</a>
+            <a href="perf.html" class="nav-link">Сотрудничество</a>
+            <a href="doc.html" class="nav-link">Документация</a>
+            <a href="index.html#contacts" class="nav-link">Контакты</a>
+            <a href="index.html#map" class="nav-link">Адреса</a>
+        </nav>
+        <div class="contact-header">
+            <a href="tel:+79997578870" class="phone">8 999 757-88-70</a>
+            <div class="small">Круглосуточно <span class="round-clock"><i class="far fa-clock"></i> 24/7</span></div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="page-title">
+            <div class="breadcrumb"><a href="index.html">Главная</a> / Сотрудничество</div>
+            <h1>СОТРУДНИЧЕСТВО</h1>
+        </div>
+        
+        <div class="content-card">
+            <p>Наша компания активно развивает собственную сеть автозаправочных станций в городе Уфа и близлежащих районах. Мы стремимся обеспечить наших клиентов высококачественным топливом, соответствующим всем необходимым стандартам и правилам безопасности, включая ГОСТ и действующие законодательные нормы.</p>
+            
+            <p>Каждую нашу станцию мы оборудуем современными системами контроля качества топлива, обеспечивая полное соблюдение требований экологической безопасности и комфорт потребителей. Все этапы строительства, монтажа оборудования, доставки топлива и последующего технического обслуживания осуществляются нашими специалистами, что позволяет гарантировать бесперебойную работу каждой АЗС круглосуточно.</p>
+            
+            <p><strong style="color: #FFD700;">Приглашаем вас к взаимовыгодному сотрудничеству!</strong> Если вы заинтересованы в установке нашей АЗС на вашей земле, свяжитесь с нами любыми удобными способами связи. Мы открыты к диалогу и рады обсудить любые интересующие вас детали сотрудничества.</p>
+            
+            <div class="contact-block">
+                <h3>Контакты для сотрудничества</h3>
+                <div class="contact-line"><i class="fas fa-phone-alt"></i> <span><strong>Тел.:</strong> 8 964 954-11-22</span></div>
+                <div class="contact-line"><i class="fas fa-envelope"></i> <span><strong>E-mail:</strong> azssamufa@mail.ru</span></div>
+                <div class="contact-line"><i class="fab fa-telegram"></i> <span><strong>Telegram:</strong> @XoilAZS</span></div>
+            </div>
+            
+            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div style="margin-bottom: 16px; color: #FFD700; font-weight: 500;">© 2025 Сеть АЗС Xoil | Республика Башкортостан</div>
+        <div style="font-size: 13px; opacity: 0.6;"><i class="fas fa-gas-pump"></i> Только качественное топливо | <i class="fas fa-handshake"></i> Открыты к сотрудничеству</div>
+    </div>
+</footer>
+</body>
+</html>
