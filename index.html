@@ -3,12 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Xoil | Качественное топливо в Башкортостане</title>
-    <meta name="description" content="Сеть АЗС Xoil — доступные цены, высокое качество топлива, скидка 1 рубль за литр при оплате наличными. Круглосуточная работа. Адреса, контакты, акции.">
+    <title>Xoil | Качественное топливо в Башкортостане — скидка 1₽ за литр</title>
+    <meta name="description" content="Сеть АЗС Xoil в Уфе и Башкортостане. Евро-5 топливо, скидка 1 рубль за литр при оплате наличными. Круглосуточно. Адреса, акции, розыгрыш iPhone 17!">
+    <meta name="keywords" content="АЗС Уфа, купить бензин, дизельное топливо Уфа, скидка на бензин, качественное топливо, Xoil, заправка рядом">
+    <meta name="author" content="Xoil">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    <meta name="revisit-after" content="1 days">
+    
+    <!-- Open Graph для соцсетей и мессенджеров -->
+    <meta property="og:title" content="Xoil | Качественное топливо в Башкортостане">
+    <meta property="og:description" content="Скидка 1 рубль за литр наличными! Розыгрыш iPhone 17. Заправляйся выгодно с Xoil.">
+    <meta property="og:image" content="https://xoilazs.ru/logs.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="160">
+    <meta property="og:image:height" content="160">
+    <meta property="og:url" content="https://xoilazs.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Xoil АЗС">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Xoil | Качественное топливо">
+    <meta name="twitter:description" content="Скидка 1 рубль за литр! Розыгрыш iPhone 17!">
+    <meta name="twitter:image" content="https://xoilazs.ru/logs.png">
+    
+    <!-- Яндекс Вебмастер -->
+   <meta name="yandex-verification" content="3d630d1a3ff9911c" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="160x160" href="logs.png">
+    <link rel="apple-touch-icon" sizes="160x160" href="logs.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Schema.org для поисковых систем (микроразметка) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Xoil",
+      "image": "https://xoilazs.ru/logs.png",
+      "description": "Сеть автозаправочных станций в Уфе и Башкортостане. Качественное топливо Евро-5, круглосуточная работа, скидка 1 рубль за литр при оплате наличными.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Уфа",
+        "addressRegion": "Башкортостан",
+        "addressCountry": "RU"
+      },
+      "telephone": "+79997578870",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "₽",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Топливо",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "АИ-92",
+              "description": "Бензин Евро-5"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "АИ-95",
+              "description": "Бензин Евро-5"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "ДТ",
+              "description": "Дизельное топливо Евро-5"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -51,13 +133,23 @@
         .logo-area {
             display: flex;
             align-items: center;
+            gap: 12px;
         }
 
-        /* Логотип — цветной, без фильтров */
         .logo-img {
-            height: 44px;
+            height: 50px;
             width: auto;
             display: block;
+            border-radius: 12px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .nav-menu {
@@ -129,17 +221,6 @@
             pointer-events: none;
         }
         
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #FFD700, transparent);
-            opacity: 0.3;
-        }
-
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -159,18 +240,10 @@
             color: transparent;
         }
 
-        .hero-title .accent {
-            background: linear-gradient(135deg, #FFD700, #FFC107);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
         .hero-description {
             font-size: 18px;
             opacity: 0.8;
             margin-bottom: 32px;
-            max-width: 90%;
             line-height: 1.6;
         }
 
@@ -178,23 +251,17 @@
             border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.4s ease;
         }
 
         .hero-image:hover {
             transform: translateY(-6px);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
         }
 
         .hero-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.03);
         }
 
         .section {
@@ -260,12 +327,6 @@
             font-weight: 600;
         }
 
-        .info-card p {
-            opacity: 0.75;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
         .accent-line {
             width: 70px;
             height: 4px;
@@ -274,19 +335,257 @@
             border-radius: 4px;
         }
 
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
+        /* КРАСИВЫЙ БЛОК РОЗЫГРЫША */
+        .giveaway-section {
+            background: linear-gradient(135deg, #0a0a00 0%, #1a1a00 50%, #0a0a00 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .giveaway-section::before {
+            content: '🎁';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.03;
+            bottom: -50px;
+            right: -50px;
+            pointer-events: none;
+            transform: rotate(-15deg);
+        }
+        
+        .giveaway-section::after {
+            content: '⭐';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.03;
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+        }
+        
+        .giveaway-block {
+            background: linear-gradient(135deg, #1a1a0a 0%, #0d0d00 100%);
+            border-radius: 60px;
+            padding: 60px 48px;
+            text-align: center;
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+        
+        .giveaway-block:hover {
+            border-color: #FFD700;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 215, 0, 0.2);
+            transform: scale(1.01);
+        }
+        
+        .giveaway-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 10px 28px;
+            border-radius: 60px;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
+        .giveaway-badge span {
+            font-size: 28px;
+        }
+        
+        .giveaway-badge-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: #010101;
+            letter-spacing: 1px;
+        }
+        
+        .giveaway-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .giveaway-title .highlight {
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .giveaway-iphone {
+            font-size: 72px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD700, #FF6B35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 20px 0;
+        }
+        
+        .giveaway-prizes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .prize-item {
+            background: rgba(255, 215, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 20px 30px;
+            text-align: center;
+            min-width: 160px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .prize-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.15);
+        }
+        
+        .prize-item-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        
+        .prize-item-place {
+            font-size: 14px;
+            color: #FFD700;
+            font-weight: 600;
+        }
+        
+        .prize-item-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        
+        .giveaway-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .step-item {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .step-number-circle {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: #010101;
+            margin-bottom: 16px;
+        }
+        
+        .step-text {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .giveaway-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #010101;
+            font-weight: 800;
+            font-size: 20px;
+            padding: 18px 42px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .giveaway-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+            gap: 20px;
+        }
+        
+        .giveaway-date {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .promo-block {
+            background: #010101;
+            border-radius: 36px;
+            padding: 56px 48px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        
+        .fuel-types {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .fuel-types div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fuel-types i {
+            color: #FFD700;
         }
 
-        .about-text p {
-            margin-bottom: 24px;
-            opacity: 0.85;
-            font-size: 17px;
-            line-height: 1.6;
-            text-align: left;
+        .btn-primary {
+            display: inline-block;
+            background: #FFD700;
+            color: #010101;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 16px;
         }
 
+        .btn-primary:hover {
+            background: #FFC107;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.25);
+        }
+        
         .stats {
             display: flex;
             gap: 28px;
@@ -302,85 +601,34 @@
             border-radius: 24px;
             border: 1px solid rgba(255, 215, 0, 0.3);
             min-width: 120px;
-            transition: all 0.3s ease;
         }
         
-        .stat-item:hover {
-            border-color: #FFD700;
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
-        }
-
         .stat-number {
             font-size: 38px;
             font-weight: 800;
             color: #FFD700;
-            line-height: 1;
         }
         
-        .stat-label {
-            font-size: 13px;
-            opacity: 0.7;
-            margin-top: 8px;
-            letter-spacing: 0.3px;
-        }
-
         .map-wrapper {
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             margin-top: 24px;
             border: 1px solid rgba(255, 215, 0, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .map-wrapper:hover {
-            border-color: #FFD700;
-            box-shadow: 0 25px 45px rgba(255, 215, 0, 0.08);
         }
 
         .map-wrapper iframe {
             width: 100%;
             height: 550px;
             border: none;
-            display: block;
         }
-
+        
         .contacts-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 56px;
             margin-top: 48px;
         }
-
-        .contact-info-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 28px;
-        }
-
-        .contact-icon {
-            width: 54px;
-            height: 54px;
-            background: rgba(255, 215, 0, 0.06);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFD700;
-            font-size: 24px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 215, 0, 0.25);
-        }
         
-        .contact-info-item:hover .contact-icon {
-            background: #FFD700;
-            color: #010101;
-            border-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
         .telegram-btn {
             display: inline-flex;
             align-items: center;
@@ -392,220 +640,42 @@
             text-decoration: none;
             color: #FFD700;
             font-weight: 600;
-            margin-top: 20px;
             transition: all 0.25s ease;
         }
-
+        
         .telegram-btn:hover {
             background: #FFD700;
             color: #010101;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
         }
-
+        
         .footer {
             background: #010101;
             padding: 40px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 215, 0, 0.2);
         }
-
-        .promo-block {
-            background: #010101;
-            border-radius: 36px;
-            padding: 56px 48px;
-            text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.35);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .promo-block:hover {
-            border-color: #FFD700;
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.08);
-        }
-        
-        .promo-icon {
-            font-size: 56px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.3));
-        }
-        
-        .promo-block .highlight {
-            color: #FFD700;
-            font-weight: 800;
-        }
-        
-        .promo-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #fff;
-            font-weight: 700;
-        }
-        
-        .promo-desc {
-            opacity: 0.85;
-            max-width: 600px;
-            margin: 0 auto 28px;
-            font-size: 17px;
-        }
-        
-        .fuel-types {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            flex-wrap: wrap;
-        }
-        
-        .fuel-types div {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .fuel-types i {
-            color: #FFD700;
-            font-size: 18px;
-        }
-        
-        .contact-card {
-            background: #050505;
-            border-radius: 28px;
-            padding: 32px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            transition: all 0.3s;
-        }
-        
-        .contact-card:hover {
-            border-color: rgba(255, 215, 0, 0.5);
-            background: #0a0a0a;
-        }
-        
-        .contact-card h3 {
-            color: #FFD700;
-            margin-bottom: 20px;
-            font-size: 26px;
-        }
-        
-        hr {
-            border-color: rgba(255, 215, 0, 0.15);
-            margin: 24px 0;
-        }
-        
-        .round-clock {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            padding: 6px 14px;
-            border-radius: 60px;
-            font-size: 13px;
-            color: #FFD700;
-            margin-left: 12px;
-        }
         
         @media (max-width: 1100px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .contacts-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 44px;
-            }
-            .section-title {
-                font-size: 34px;
-            }
-            .header-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-header {
-                text-align: center;
-            }
-            .hero {
-                padding: 60px 0;
-            }
+            .hero-grid, .contacts-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 44px; }
+            .section-title { font-size: 34px; }
+            .giveaway-title { font-size: 32px; }
+            .giveaway-iphone { font-size: 48px; }
+            .giveaway-block { padding: 40px 24px; }
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            .hero {
-                padding: 50px 0;
-            }
-            .section {
-                padding: 50px 0;
-            }
-            .nav-menu {
-                justify-content: center;
-                gap: 20px;
-            }
-            .hero-title {
-                font-size: 32px;
-            }
-            .promo-block {
-                padding: 36px 24px;
-            }
-            .promo-title {
-                font-size: 24px;
-            }
-            .stats {
-                justify-content: center;
-            }
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .map-wrapper iframe {
-                height: 400px;
-            }
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: #FFD700;
-            color: #010101;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary:hover {
-            background: #FFC107;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.25);
-        }
-
-        .promo-badge {
-            background: rgba(255, 215, 0, 0.08);
-            backdrop-filter: blur(4px);
-            color: #FFD700;
-            font-weight: 700;
-            padding: 8px 20px;
-            border-radius: 60px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 14px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
+            .container { padding: 0 20px; }
+            .hero { padding: 50px 0; }
+            .section { padding: 50px 0; }
+            .hero-title { font-size: 32px; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .giveaway-steps { flex-direction: column; }
+            .prize-item { min-width: 140px; }
         }
     </style>
 </head>
@@ -614,7 +684,8 @@
 <header class="header">
     <div class="container header-inner">
         <div class="logo-area">
-            <img src="l.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/44x44?text=Xoil'">
+            <img src="logs.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/50x50?text=Xoil'">
+            <span class="logo-text">Xoil</span>
         </div>
         <nav class="nav-menu">
             <a href="index.html" class="nav-link">Главная</a>
@@ -628,7 +699,7 @@
         </nav>
         <div class="contact-header">
             <a href="tel:+79997578870" class="phone">8 999 757-88-70</a>
-            <div class="small">Круглосуточно <span class="round-clock"><i class="far fa-clock"></i> 24/7</span></div>
+            <div class="small">Круглосуточно <i class="far fa-clock"></i> 24/7</div>
         </div>
     </div>
 </header>
@@ -637,8 +708,8 @@
     <section class="hero">
         <div class="container hero-grid">
             <div>
-                <div class="promo-badge">⚡ Лучшее топливо в Башкортостане</div>
-                <h1 class="hero-title"><span class="accent">Xoil</span> — качество, <br>которому доверяют</h1>
+                <div class="promo-badge" style="background: rgba(255,215,0,0.1); display: inline-block; padding: 8px 20px; border-radius: 60px; margin-bottom: 20px;">⚡ Лучшее топливо в Башкортостане</div>
+                <h1 class="hero-title"><span style="color:#FFD700;">Xoil</span> — качество, <br>которому доверяют</h1>
                 <p class="hero-description">Доступные цены, строгий контроль качества и скидка 1 рубль за литр при оплате наличными. Заправляйся выгодно с Xoil!</p>
                 <a href="#map" class="btn-primary">Найти АЗС <i class="fas fa-map-marker-alt" style="margin-left: 8px;"></i></a>
             </div>
@@ -651,55 +722,27 @@
     <section id="about" class="section">
         <div class="container">
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title" style="text-align: center; background: none; color: #FFD700; -webkit-background-clip: unset;">О компании</h2>
-                    <div class="accent-line"></div>
-                    <p><strong style="color: #FFD700;">Xoil</strong> — динамично развивающаяся сеть автозаправочных станций на территории Республики Башкортостан. Мы объединяем доступные цены и проверенное качество, делая каждую поездку комфортнее и экономичнее.</p>
-                    <p>Благодаря работе с надежными поставщиками и собственному автопарку бензовозов мы гарантируем полный контроль качества топлива на всех этапах — от нефтебазы до вашего бака. Наши АЗС работают круглосуточно, чтобы вы могли заправиться в любое удобное время.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">АЗС в Уфе и РБ</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Круглосуточная работа</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Собственная логистика</div>
-                        </div>
-                    </div>
+                <h2 class="section-title" style="text-align: center;">О компании</h2>
+                <div class="accent-line"></div>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;"><strong style="color: #FFD700;">Xoil</strong> — динамично развивающаяся сеть автозаправочных станций на территории Республики Башкортостан. Мы объединяем доступные цены и проверенное качество, делая каждую поездку комфортнее и экономичнее.</p>
+                <div class="stats">
+                    <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">АЗС в Уфе и РБ</div></div>
+                    <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Круглосуточная работа</div></div>
+                    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Собственная логистика</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="benefits" class="section" style="background: #010101;">
+    <section id="benefits" class="section">
         <div class="container">
             <h2 class="section-title">Почему водители выбирают Xoil</h2>
             <p class="section-subtitle">Наши принципы — прозрачность, честность и забота о клиентах</p>
             <div class="cards-grid">
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-gas-pump"></i></div>
-                    <h3>Высокое качество топлива</h3>
-                    <p>Евро-5 стандарт, регулярные лабораторные проверки, работа только с проверенными НПЗ.</p>
-                </div>
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-ruble-sign"></i></div>
-                    <h3>Доступные цены</h3>
-                    <p>Гибкая ценовая политика и скидка 1 рубль за каждый литр при оплате наличными.</p>
-                </div>
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-truck"></i></div>
-                    <h3>Собственный транспорт</h3>
-                    <p>Использование собственных бензовозов обеспечивает полный контроль доставки и качества.</p>
-                </div>
-                <div class="info-card">
-                    <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                    <h3>Выгодные акции</h3>
-                    <p>Регулярные сезонные предложения и программа лояльности для постоянных клиентов.</p>
-                </div>
+                <div class="info-card"><div class="card-icon"><i class="fas fa-gas-pump"></i></div><h3>Высокое качество топлива</h3><p>Евро-5 стандарт, регулярные лабораторные проверки</p></div>
+                <div class="info-card"><div class="card-icon"><i class="fas fa-ruble-sign"></i></div><h3>Доступные цены</h3><p>Скидка 1 рубль за литр при оплате наличными</p></div>
+                <div class="info-card"><div class="card-icon"><i class="fas fa-truck"></i></div><h3>Собственный транспорт</h3><p>Полный контроль доставки и качества</p></div>
+                <div class="info-card"><div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div><h3>Выгодные акции</h3><p>Сезонные предложения и программа лояльности</p></div>
             </div>
         </div>
     </section>
@@ -707,13 +750,57 @@
     <section id="promo" class="section">
         <div class="container">
             <div class="promo-block">
-                <div class="promo-icon">⛽️</div>
-                <div class="promo-title">При оплате наличными — <span class="highlight">скидка 1 рубль</span> за каждый литр!</div>
-                <div class="promo-desc">Заправляйтесь выгодно в любое время. Акция действует на все виды топлива на всех АЗС Xoil.</div>
+                <div class="promo-icon" style="font-size: 56px;">⛽️</div>
+                <div class="promo-title" style="font-size: 32px; font-weight: 700;">При оплате наличными — <span style="color: #FFD700;">скидка 1 рубль</span> за каждый литр!</div>
                 <div class="fuel-types">
                     <div><i class="fas fa-check-circle"></i> АИ-92</div>
                     <div><i class="fas fa-check-circle"></i> АИ-95</div>
                     <div><i class="fas fa-check-circle"></i> ДТ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КРАСИВЫЙ БЛОК РОЗЫГРЫША -->
+    <section class="giveaway-section section">
+        <div class="container">
+            <div class="giveaway-block">
+                <div class="giveaway-badge">
+                    <span>🎁</span>
+                    <span class="giveaway-badge-text">ГЛАВНЫЙ РОЗЫГРЫШ 2026</span>
+                    <span>🎲</span>
+                </div>
+                
+                <div class="giveaway-title">
+                    Выиграй <span class="highlight">iPhone 17</span>
+                </div>
+                <div class="giveaway-iphone">
+                    📱 + 19 крутых призов! 🎁
+                </div>
+                
+                <div class="giveaway-prizes">
+                    <div class="prize-item"><div class="prize-item-icon">📱</div><div class="prize-item-place">1 место</div><div class="prize-item-name">iPhone 17</div></div>
+                    <div class="prize-item"><div class="prize-item-icon">🧰</div><div class="prize-item-place">2-6 места</div><div class="prize-item-name">Набор инструментов</div></div>
+                    <div class="prize-item"><div class="prize-item-icon">🔧</div><div class="prize-item-place">7-16 места</div><div class="prize-item-name">Компрессор</div></div>
+                    <div class="prize-item"><div class="prize-item-icon">⛽</div><div class="prize-item-place">17-20 места</div><div class="prize-item-name">Бензин 20л</div></div>
+                </div>
+                
+                <div class="giveaway-steps">
+                    <div class="step-item"><div class="step-number-circle">1</div><div class="step-text">Заправься от 2 000 ₽</div></div>
+                    <div class="step-item"><div class="step-number-circle">2</div><div class="step-text">Найди код на чеке</div></div>
+                    <div class="step-item"><div class="step-number-circle">3</div><div class="step-text">Зарегистрируй код</div></div>
+                    <div class="step-item"><div class="step-number-circle">4</div><div class="step-text">Жди розыгрыша!</div></div>
+                </div>
+                
+                <a href="tirage.html" class="giveaway-btn">
+                    <i class="fas fa-gift"></i> УЧАСТВОВАТЬ СЕЙЧАС
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <div class="giveaway-date">
+                    <span><i class="far fa-calendar-alt"></i> С 1 по 30 мая 2026</span>
+                    <span><i class="fas fa-trophy"></i> 20 победителей</span>
+                    <span><i class="fas fa-check-circle"></i> 1 чек = 1 шанс</span>
                 </div>
             </div>
         </div>
@@ -724,116 +811,23 @@
             <h2 class="section-title">Наши заправки в Уфе</h2>
             <p class="section-subtitle">Удобное расположение на карте города</p>
             <div class="map-wrapper">
-                <iframe 
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae53ca2febd176ed50e91792ed3fd2aff79253cc502d9c61f7df7d26a2a2592c2&amp;source=constructor" 
-                    allowfullscreen>
-                </iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae53ca2febd176ed50e91792ed3fd2aff79253cc502d9c61f7df7d26a2a2592c2&amp;source=constructor" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-<!-- НОВЫЙ БЛОК РОЗЫГРЫША -->
-<section id="giveaway" class="section" style="background: linear-gradient(135deg, #010101 0%, #1a1a00 100%); border-bottom: 1px solid rgba(255, 215, 0, 0.2);">
-    <div class="container">
-        <div class="promo-block" style="background: #0a0a00; border-color: #FFD700; box-shadow: 0 0 25px rgba(255,215,0,0.15);">
-            <div class="promo-icon">🎁</div>
-            <div class="promo-title" style="font-size: 32px;">Мега-розыгрыш от <span class="highlight">Xoil</span></div>
-            <div class="promo-desc" style="max-width: 700px;">
-                <span style="font-size: 28px; display: block; margin: 10px 0;">iPhone 17</span>
-                и другие крутые призы для наших клиентов!
-            </div>
-            <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 25px 0 15px;">
-                <div><i class="fas fa-check-circle" style="color: #FFD700;"></i> Заправься от 2000₽</div>
-                <div><i class="fas fa-check-circle" style="color: #FFD700;"></i> Получи код на чеке</div>
-                <div><i class="fas fa-check-circle" style="color: #FFD700;"></i> Введи код на сайте</div>
-            </div>
-            <a href="tirage.html" class="btn-primary" style="margin-top: 20px; background: #FFD700; color: #010101; font-weight: 800;">
-                Участвовать ➜
-            </a>
-            <div style="margin-top: 20px; font-size: 13px; opacity: 0.7;">
-                📅 1 – 30 мая | 🏆 20 победителей | 🔥 1 чек = 1 шанс
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="contacts" class="section" style="background: #010101;">
+    <section id="contacts" class="section">
         <div class="container">
             <h2 class="section-title">Свяжитесь с нами</h2>
             <div class="contacts-grid">
                 <div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon"><i class="fas fa-map-pin"></i></div>
-                        <div>
-                            <strong>Головной офис</strong><br>
-                            г. Уфа, жилой район Шакша-Южная,<br> ул. Гвардейская, 41Б
-                        </div>
+                    <div class="contact-info-item" style="display: flex; align-items: center; gap: 20px; margin-bottom: 28px;">
+                        <div style="width: 54px; height: 54px; background: rgba(255,215,0,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFD700;"><i class="fas fa-map-pin"></i></div>
+                        <div><strong>Головной офис</strong><br>г. Уфа, жилой район Шакша-Южная,<br> ул. Гвардейская, 41Б</div>
                     </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div>
-                            <strong>Телефоны</strong><br>
-                            <a href="tel:+79997578870" style="color: #FFD700; text-decoration: none; font-weight: 500;">8 999 757 88 70</a><br>
-                            <a href="tel:+89649541122" style="color: #FFD700; text-decoration: none; font-weight: 500;">8 964 954 11 22</a>
-                        </div>
+                    <div class="contact-info-item" style="display: flex; align-items: center; gap: 20px; margin-bottom: 28px;">
+                        <div style="width: 54px; height: 54px; background: rgba(255,215,0,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFD700;"><i class="fas fa-phone-alt"></i></div>
+                        <div><strong>Телефоны</strong><br><a href="tel:+79997578870" style="color: #FFD700;">8 999 757 88 70</a><br><a href="tel:+89649541122" style="color: #FFD700;">8 964 954 11 22</a></div>
                     </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <strong>E-mail</strong><br>
-                            <a href="mailto:azssamufa@mail.ru" style="color: #FFD700;">azssamufa@mail.ru</a>
-                        </div>
-                    </div>
-                    <a href="https://t.me/XoilAZS" target="_blank" class="telegram-btn">
-                        <i class="fab fa-telegram-plane" style="font-size: 22px;"></i> Наш Telegram
-                    </a>
-                </div>
-                <div class="contact-card">
-                    <h3>График работы АЗС</h3>
-                    <p><strong style="color: #FFD700;">Круглосуточно</strong> — 24 часа 7 дней в неделю</p>
-                    <p><strong style="color: #FFD700;">Поддержка:</strong> по телефону 24/7</p>
-                    <hr>
-                    <p><i class="fas fa-shield-alt" style="color: #FFD700;"></i> <strong>Качество гарантируем:</strong> каждая партия топлива проходит лабораторный контроль.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div style="margin-bottom: 16px; color: #FFD700; font-weight: 500;">© 2025 Сеть АЗС Xoil | Республика Башкортостан</div>
-        <div style="font-size: 13px; opacity: 0.6;">
-            <i class="fas fa-gas-pump"></i> Только качественное топливо | <i class="fas fa-clock"></i> Круглосуточно
-        </div>
-    </div>
-</footer>
-
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === "#" || href === "" || href === "index.html") return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-    
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.info-card');
-        cards.forEach((card, idx) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(25px)';
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, idx * 100);
-        });
-    });
-</script>
-</body>
-</html>
+                    <div class="contact-info-item" style="display: flex; align-items: center; gap: 20px; margin-bottom: 28px;">
+                        <div style="width: 54px; height: 54px; background: rgba(255,215,0,0.06); border-radius: 50%; display: flex; align-items: center; justify-content:
