@@ -337,28 +337,26 @@
     // ========================
     // НАСТРОЙКА GOOGLE SCRIPT
     // ========================
-    // 🔥 ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШУ РЕАЛЬНУЮ (из Apps Script)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9vvb6_4pM0UUicPY2ptieZhVxNutyOE3DdBqqSqDtaJ8ApjHt1TYddjdp2lZd3C_Eig/exec';
+    // 🔥 ВСТАВЬТЕ ВАШ URL СЮДА (из Apps Script)
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRi8SMSx520prvHiwTB7g5j_ZUAG6pCQkAKLO8kJdZwWvf_f3pNgXyT2WDVHbAkkjrwQ/exec';
     
     const form = document.getElementById('registerForm');
     const msgDiv = document.getElementById('formMessage');
     
-    // Валидация телефона (простая)
+    // Валидация телефона
     function validatePhone(phone) {
-        const phoneRegex = /^[\+\(\)\d\s\-]{10,20}$/;
-        return phoneRegex.test(phone);
+        const digits = phone.replace(/\D/g, '');
+        return digits.length >= 10 && digits.length <= 12;
     }
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Собираем данные
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const promoCode = document.getElementById('promoCode').value.trim();
         
-        // Валидация
         if (!firstName || !lastName) {
             showMessage('Пожалуйста, введите имя и фамилию', 'error');
             return;
@@ -370,7 +368,7 @@
         }
         
         if (!validatePhone(phone)) {
-            showMessage('Пожалуйста, введите корректный номер телефона', 'error');
+            showMessage('Пожалуйста, введите корректный номер телефона (10-12 цифр)', 'error');
             return;
         }
         
@@ -379,68 +377,83 @@
             return;
         }
         
-        // Блокируем кнопку
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Отправка...';
         submitBtn.disabled = true;
         
-        // Получаем дату и время регистрации
         const now = new Date();
         const registrationDate = now.toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' });
         
-        // Формируем данные для отправки
-        const formData = new URLSearchParams();
-        formData.append('firstName', firstName);
-        formData.append('lastName', lastName);
-        formData.append('phone', phone);
-        formData.append('promoCode', promoCode);
-        formData.append('registrationDate', registrationDate);
-        formData.append('timestamp', now.getTime());
-        
+        // Получаем IP через бесплатный API
+        let userIP = 'IP не определён';
         try {
-            // Отправка в Google Таблицу
-            await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // для Apps Script без CORS-заголовков
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: formData.toString()
-            });
+            const ipResponse = await fetch('https://api.ipify.org?format=json');
+            const ipData = await ipResponse.json();
+            userIP = ipData.ip;
+        } catch(ipError) {
+            console.log('Не удалось определить IP');
+        }
+        
+        const userAgent = navigator.userAgent;
+        
+        // Формируем URL с параметрами для JSONP
+        const params = new URLSearchParams();
+        params.append('callback', 'jsonp_callback');
+        params.append('firstName', firstName);
+        params.append('lastName', lastName);
+        params.append('phone', phone);
+        params.append('promoCode', promoCode);
+        params.append('registrationDate', registrationDate);
+        params.append('userIP', userIP);
+        params.append('userAgent', userAgent);
+        params.append('timestamp', now.getTime());
+        
+        // Создаём уникальный callback
+        const callbackName = 'jsonp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+        
+        window[callbackName] = function(response) {
+            delete window[callbackName];
+            document.body.removeChild(script);
             
-            // Успех (даже при no-cors мы не получим ответ, но запрос уйдёт)
-            showMessage('✅ Регистрация успешна! Ваш код принят. Ждите розыгрыша 31 мая. Удачи!', 'success');
+            if (response.result === 'success') {
+                showMessage('✅ Регистрация успешна! Ваш код принят. Ждите розыгрыша 31 мая. Удачи!', 'success');
+                document.getElementById('firstName').value = '';
+                document.getElementById('lastName').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('promoCode').value = '';
+            } else {
+                showMessage('❌ ' + (response.error || 'Ошибка регистрации. Попробуйте ещё раз.'), 'error');
+            }
             
-            // Очищаем форму
-            document.getElementById('firstName').value = '';
-            document.getElementById('lastName').value = '';
-            document.getElementById('phone').value = '';
-            document.getElementById('promoCode').value = '';
-            
-        } catch (error) {
-            console.error('Ошибка:', error);
-            showMessage('❌ Ошибка связи. Пожалуйста, попробуйте ещё раз или обратитесь на АЗС.', 'error');
-        } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }
+        };
+        
+        // Создаём JSONP скрипт
+        const script = document.createElement('script');
+        script.src = GOOGLE_SCRIPT_URL + '?' + params.toString().replace('callback=jsonp_callback', 'callback=' + callbackName);
+        document.body.appendChild(script);
+        
+        // Таймаут на случай ошибки
+        setTimeout(() => {
+            if (window[callbackName]) {
+                window[callbackName]({ result: 'error', error: 'Превышено время ожидания. Проверьте интернет-соединение.' });
+            }
+        }, 15000);
     });
     
     function showMessage(text, type) {
         msgDiv.textContent = text;
         msgDiv.className = `message ${type}`;
         msgDiv.style.display = 'block';
-        
-        // Прокрутка к сообщению
         msgDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
         setTimeout(() => {
             msgDiv.style.display = 'none';
         }, 6000);
     }
     
-    // Маска для телефона (необязательно, но приятно)
+    // Маска для телефона
     const phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
