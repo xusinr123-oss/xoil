@@ -175,6 +175,12 @@
             color: #ff6666;
             margin-left: 4px;
         }
+        .code-hint {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+            margin-left: 12px;
+        }
         input {
             width: 100%;
             padding: 14px 18px;
@@ -189,6 +195,9 @@
             outline: none;
             border-color: #FFD700;
             box-shadow: 0 0 10px rgba(255,215,0,0.3);
+        }
+        input:invalid {
+            border-color: #ff4444;
         }
         .btn-submit {
             background: #FFD700;
@@ -207,6 +216,11 @@
             background: #ffc107;
             transform: scale(1.02);
             box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+        }
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
         }
         .info-steps {
             background: rgba(255,215,0,0.05);
@@ -259,6 +273,11 @@
             background: rgba(255,0,0,0.1);
             border: 1px solid #ff4444;
             color: #ffaaaa;
+        }
+        .warning {
+            background: rgba(255,215,0,0.1);
+            border: 1px solid #FFD700;
+            color: #FFD700;
         }
         .footer {
             text-align: center;
@@ -347,7 +366,8 @@
                 </div>
                 <div class="form-group">
                     <label>Код участника с чека <span class="required">*</span></label>
-                    <input type="text" id="promoCode" placeholder="Например: XOIL-ABCD-1234" required autocomplete="off">
+                    <input type="text" id="promoCode" placeholder="123456789" required autocomplete="off" inputmode="numeric" pattern="[0-9]{9,10}">
+                    <div class="code-hint"><i class="fas fa-info-circle"></i> Код состоит только из цифр, 9 или 10 символов</div>
                 </div>
                 <button type="submit" class="btn-submit"><i class="fas fa-gift"></i> Участвовать в розыгрыше</button>
                 <div id="formMessage" class="message" style="display: none;"></div>
@@ -363,7 +383,7 @@
             <h3><i class="fas fa-info-circle"></i> Как участвовать?</h3>
             <div class="steps-list">
                 <div class="step"><div class="step-number">1</div> Заправьтесь от 2 000 ₽</div>
-                <div class="step"><div class="step-number">2</div> Найдите уникальный код на чеке</div>
+                <div class="step"><div class="step-number">2</div> Найдите уникальный код на чеке (9-10 цифр)</div>
                 <div class="step"><div class="step-number">3</div> Зарегистрируйтесь и введите код</div>
                 <div class="step"><div class="step-number">4</div> Ждите розыгрыша 31 мая!</div>
             </div>
@@ -382,15 +402,87 @@
     // ========================
     // НАСТРОЙКА GOOGLE SCRIPT
     // ========================
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwRi8SMSx520prvHiwTB7g5j_ZUAG6pCQkAKLO8kJdZwWvf_f3pNgXyT2WDVHbAkkjrwQ/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWnyZ3FbhfC3BPKtKt5LcPs6LEeLCDYnQ9Az_DokBMWKkXmXRw6YhIFM9TdSSpQdj92g/exec';
     
     const form = document.getElementById('registerForm');
     const msgDiv = document.getElementById('formMessage');
+    const promoCodeInput = document.getElementById('promoCode');
     
+    // Валидация телефона
     function validatePhone(phone) {
         const digits = phone.replace(/\D/g, '');
         return digits.length >= 10 && digits.length <= 12;
     }
+    
+    // Валидация кода (только цифры, 9-10 символов)
+    function validatePromoCode(code) {
+        const digitsOnly = code.replace(/\D/g, '');
+        return digitsOnly.length >= 9 && digitsOnly.length <= 10;
+    }
+    
+    // Очистка кода от НЕ цифр
+    function cleanPromoCode(code) {
+        return code.replace(/\D/g, '');
+    }
+    
+    // Проверка существующих кодов (локальный кеш)
+    let existingCodes = new Set();
+    
+    // Загружаем существующие коды из таблицы (через API)
+    async function loadExistingCodes() {
+        try {
+            // Получаем данные из Google Sheets через JSONP
+            const checkUrl = GOOGLE_SCRIPT_URL + '?action=getCodes&callback=loadCodesCallback';
+            
+            return new Promise((resolve) => {
+                const callbackName = 'loadCodesCallback_' + Date.now();
+                window[callbackName] = function(response) {
+                    delete window[callbackName];
+                    document.body.removeChild(script);
+                    if (response && response.codes) {
+                        existingCodes = new Set(response.codes);
+                    }
+                    resolve();
+                };
+                
+                const script = document.createElement('script');
+                script.src = GOOGLE_SCRIPT_URL + '?action=getCodes&callback=' + callbackName;
+                document.body.appendChild(script);
+                
+                setTimeout(() => {
+                    if (window[callbackName]) {
+                        window[callbackName]({ codes: [] });
+                    }
+                }, 3000);
+            });
+        } catch(e) {
+            console.log('Не удалось загрузить существующие коды');
+        }
+    }
+    
+    // Загружаем коды при загрузке страницы
+    loadExistingCodes();
+    
+    // Ограничиваем ввод только цифрами
+    promoCodeInput.addEventListener('input', function(e) {
+        let value = e.target.value;
+        // Удаляем всё кроме цифр
+        let digitsOnly = value.replace(/\D/g, '');
+        // Ограничиваем 10 цифрами
+        if (digitsOnly.length > 10) {
+            digitsOnly = digitsOnly.slice(0, 10);
+        }
+        e.target.value = digitsOnly;
+        
+        // Визуальная подсказка о длине
+        if (digitsOnly.length >= 9 && digitsOnly.length <= 10) {
+            e.target.style.borderColor = '#00ff00';
+        } else if (digitsOnly.length > 0) {
+            e.target.style.borderColor = '#ff4444';
+        } else {
+            e.target.style.borderColor = '#333';
+        }
+    });
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -398,7 +490,10 @@
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
         const phone = document.getElementById('phone').value.trim();
-        const promoCode = document.getElementById('promoCode').value.trim();
+        let promoCodeRaw = document.getElementById('promoCode').value.trim();
+        
+        // Очищаем код от всего кроме цифр
+        const promoCode = cleanPromoCode(promoCodeRaw);
         
         if (!firstName || !lastName) {
             showMessage('Пожалуйста, введите имя и фамилию', 'error');
@@ -416,7 +511,18 @@
         }
         
         if (!promoCode) {
-            showMessage('Пожалуйста, введите код с чека', 'error');
+            showMessage('Пожалуйста, введите код с чека (только цифры)', 'error');
+            return;
+        }
+        
+        if (!validatePromoCode(promoCode)) {
+            showMessage('Код должен содержать 9 или 10 цифр. Пример: 123456789', 'error');
+            return;
+        }
+        
+        // Проверка на дубликат (локально)
+        if (existingCodes.has(promoCode)) {
+            showMessage('❌ Этот код уже зарегистрирован! Один чек = один участник.', 'error');
             return;
         }
         
@@ -454,14 +560,19 @@
         
         window[callbackName] = function(response) {
             delete window[callbackName];
-            document.body.removeChild(script);
+            if (script.parentNode) document.body.removeChild(script);
             
             if (response.result === 'success') {
+                // Добавляем код в локальный Set, чтобы повторно не отправить
+                existingCodes.add(promoCode);
                 showMessage('✅ Регистрация успешна! Ваш код принят. Ждите розыгрыша 31 мая. Удачи!', 'success');
                 document.getElementById('firstName').value = '';
                 document.getElementById('lastName').value = '';
                 document.getElementById('phone').value = '';
                 document.getElementById('promoCode').value = '';
+            } else if (response.error && response.error.includes('уже зарегистрирован')) {
+                existingCodes.add(promoCode);
+                showMessage('❌ ' + response.error, 'error');
             } else {
                 showMessage('❌ ' + (response.error || 'Ошибка регистрации. Попробуйте ещё раз.'), 'error');
             }
@@ -491,6 +602,7 @@
         }, 6000);
     }
     
+    // Маска для телефона
     const phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
