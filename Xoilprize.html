@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Правила акции «XOIL PRIZE» | Xoil АЗС</title>
+    <meta name="description" content="Официальные правила проведения стимулирующей акции «XOIL PRIZE». Условия участия, призы, порядок определения победителей.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" type="image/png" sizes="160x160" href="logs.png">
+    <link rel="apple-touch-icon" sizes="160x160" href="logs.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #010101;
+            color: #e8e8e8;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Хедер */
+        .header {
+            background: #010101;
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 12px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            .nav-menu {
+                gap: 12px;
+            }
+            .nav-link {
+                font-size: 12px;
+            }
+        }
+
+        .nav-link {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FFD700;
+        }
+
+        .contact-header {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .contact-header {
+                text-align: center;
+            }
+        }
+
+        .contact-header .phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        /* Основной контент — документ с правилами */
+        .rules-section {
+            padding: 60px 0 80px;
+        }
+
+        .rules-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .rules-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 6px 18px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .rules-title {
+            font-size: 42px;
+            font-weight: 800;
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #FFFFFF, #FFD700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .rules-title {
+                font-size: 28px;
+            }
+        }
+
+        .rules-subtitle {
+            font-size: 16px;
+            opacity: 0.75;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .rules-document {
+            background: rgba(5, 5, 5, 0.85);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 48px 56px;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .rules-document {
+                padding: 28px 20px;
+            }
+        }
+
+        /* Стили для текста документа */
+        .rules-document h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 32px 0 16px;
+            font-family: 'Manrope', sans-serif;
+            border-left: 4px solid #FFD700;
+            padding-left: 16px;
+        }
+
+        .rules-document h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .rules-document h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffdd66;
+            margin: 24px 0 12px;
+        }
+
+        .rules-document h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e8e8e8;
+            margin: 20px 0 10px;
+        }
+
+        .rules-document p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .rules-document .article-number {
+            font-weight: 700;
+            color: #FFD700;
+        }
+
+        .rules-document ul, .rules-document ol {
+            margin: 12px 0 20px 28px;
+        }
+
+        .rules-document li {
+            margin-bottom: 8px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .rules-document .legal-note {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid #FFD700;
+            padding: 20px 24px;
+            margin: 28px 0;
+            border-radius: 16px;
+            font-size: 14px;
+        }
+
+        .rules-document table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .rules-document th, .rules-document td {
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .rules-document th {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        hr {
+            border-color: rgba(255, 215, 0, 0.15);
+            margin: 24px 0;
+        }
+
+        .signature-block {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            font-style: italic;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .download-pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #FFD700;
+            color: #010101;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 32px;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-pdf:hover {
+            background: #ffcd38;
+            gap: 16px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #FFD700;
+            text-decoration: none;
+            margin-top: 32px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .footer {
+            background: #010101;
+            padding: 32px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .header, .footer, .download-pdf, .back-link, .rules-badge {
+                display: none;
+            }
+            .rules-document {
+                background: white;
+                border: none;
+                padding: 0;
+                color: black;
+            }
+            .rules-document h2, .rules-document .article-number {
+                color: #b8860b;
+            }
+            .rules-title {
+                color: black;
+                background: none;
+                -webkit-background-clip: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <a href="index.html">
+                <img src="l.png" alt="Xoil" class="logo-img" onerror="this.src='https://placehold.co/40x40?text=Xoil'">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html#home" class="nav-link">Главная</a>
+            <a href="index.html#about" class="nav-link">О нас</a>
+            <a href="index.html#benefits" class="nav-link">Преимущества</a>
+            <a href="index.html#promo" class="nav-link">Акции</a>
+            <a href="perf.html" class="nav-link">Сотрудничество</a>
+            <a href="doc.html" class="nav-link">Документация</a>
+            <a href="index.html#contacts" class="nav-link">Контакты</a>
+            <a href="index.html#map" class="nav-link">Адреса</a>
+        </nav>
+        <div class="contact-header">
+            <a href="tel:+79997578870" class="phone">8 999 757-88-70</a>
+            <div class="small">Круглосуточно <i class="far fa-clock"></i> 24/7</div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="rules-section">
+        <div class="container">
+            <div class="rules-header">
+                <div class="rules-badge">
+                    <i class="fas fa-gavel"></i> Официальный документ
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h1 class="rules-title">ПРАВИЛА ПРОВЕДЕНИЯ СТИМУЛИРУЮЩЕЙ АКЦИИ «XOIL PRIZE»</h1>
+                <p class="rules-subtitle">Актуальная редакция от 05.06.2026. Внимательно ознакомьтесь перед участием.</p>
+            </div>
+
+            <div class="rules-document" id="rulesContent">
+                <p style="text-align: right; font-size: 13px; opacity: 0.7;">Документ опубликован: 05.06.2026</p>
+                
+                <h2>Статья 1. Основные положения</h2>
+                <p><span class="article-number">1.1.</span> Настоящие Правила определяют порядок организации, проведения, участия и определения результатов стимулирующей акции «XOIL Prize» (далее — Акция), а также права и обязанности Организатора и Участников.</p>
+                <p><span class="article-number">1.2.</span> Акция не является лотереей, тотализатором или иным основанным на риске игровым мероприятием, регулируемым Федеральным законом от 29.12.2006 № 244-ФЗ. Акция носит рекламно-стимулирующий характер и направлена на увеличение объёмов реализации топлива на автозаправочных станциях Организатора.</p>
+                <p><span class="article-number">1.3.</span> <strong>Организатор Акции:</strong><br>
+                Полное наименование: ИП Хуснутдинов Рем Уралович
+                ИНН: 027722517717<br>
+               
+                Юридический адрес: 450069, Республика Башкортостан, г. Уфа, ул. Гвардейская, 41Б</p>
+                <p><span class="article-number">1.4.</span> <strong>Контактная информация Организатора по вопросам Акции:</strong><br>
+                Адрес электронной почты: <a href="mailto:azssamufa@mail.ru" style="color:#FFD700;">azssamufa@mail.ru</a><br>
+                Номер телефона: 8 999 757-88-70</p>
+                <p><span class="article-number">1.5.</span> <strong>Территория проведения Акции:</strong> Российская Федерация, все автозаправочные станции, работающие под брендом Xoil в Республике Башкортостан.</p>
+                <p><span class="article-number">1.6.</span> <strong>Сроки проведения Акции:</strong><br>
+                — Старт приёма заявок: 01.05.2026, 00:00 (по местному времени АЗС)<br>
+                — Окончание приёма заявок: 01.06.2026, 23:59 (по местному времени АЗС)<br>
+                — Дата определения победителей: 02.06.2026<br>
+                — Публикация результатов: не позднее 05.06.2026</p>
+
+                <h2>Статья 2. Термины и определения</h2>
+                <p><span class="article-number">2.1.</span> <strong>Участник</strong> — физическое лицо, достигшее возраста 18 лет, совершившее необходимые действия в порядке, установленном настоящими Правилами.</p>
+                <p><span class="article-number">2.2.</span> <strong>Чек</strong> — кассовый чек, выданный на автозаправочной станции Организатора, содержащий уникальный цифровой КОД АКЦИИ.</p>
+                <p><span class="article-number">2.3.</span> <strong>Код</strong> — последовательность, состоящая только из цифр, сгенерированная кассовым программным обеспечением и однозначно идентифицирующая факт совершения покупки топлива объёмом не менее 20 (двадцати) литров.</p>
+                <p><span class="article-number">2.4.</span> <strong>Сайт Акции</strong> — интернет-сайт, расположенный в сети «Интернет» по адресу: <a href="https://xoilazs.ru" style="color:#FFD700;">xoilazs.ru</a>.</p>
+                <p><span class="article-number">2.5.</span> <strong>Регистрационная форма</strong> — электронная форма на Сайте Акции, предназначенная для внесения персональных данных Участника и ввода Кода.</p>
+
+                <h2>Статья 3. Порядок участия в Акции</h2>
+                <p><span class="article-number">3.1.</span> Для участия в Акции Участник обязуется совершить следующие действия в строгой последовательности:</p>
+                <ul>
+                    <li>3.1.1. Произвести заправку топливом на автозаправочной станции Организатора объёмом не менее 20 (двадцати) литров (независимо от стоимости топлива) по одному кассовому чеку.</li>
+                    <li>3.1.2. Получить кассовый чек, содержащий цифровой КОД АКЦИИ длиной от 5 или 11 символов. Отсутствие кода на чеке или несоответствие формату автоматически исключает возможность участия по данному чеку.</li>
+                    <li>3.1.3. Перейти на Сайт Акции xoilazs.ru (в том числе с использованием QR-кода, размещённого на информационных материалах на АЗС).</li>
+                    <li>3.1.4. Перейти в раздел «РОЗЫГРЫШ» и активировать интерактивный элемент «Участвовать».</li>
+                    <li>3.1.5. Заполнить регистрационную форму, указав следующие достоверные данные: фамилия, имя; номер мобильного телефона.</li>
+                    <li>3.1.6. Ввести цифровой КОД АКЦИИ (от 5 до 11 цифр), указанный на кассовом чеке, в соответствующее поле регистрационной формы.</li>
+                    <li>3.1.7. Подтвердить ознакомление и согласие с настоящими Правилами, а также дать согласие на обработку персональных данных (путём установки отметки в специальном чекбоксе).</li>
+                </ul>
+                <p><span class="article-number">3.2.</span> <strong>Особенности множественного участия:</strong> Участник вправе зарегистрировать неограниченное количество Кодов, полученных по разным чекам, при условии, что каждый чек соответствует требованиям п. 3.1.1 и п. 3.1.2. Один и тот же Код не может быть использован более одного раза.</p>
+                <p><span class="article-number">3.3.</span> <strong>Запрещённые действия (основания для дисквалификации):</strong> регистрация одного Кода более одного раза; использование Кода, полученного лицом, не совершавшим заправку; внесение заведомо ложных персональных данных; использование автоматизированных скриптов; подделка кассовых чеков.</p>
+
+                <h2>Статья 4. Призовой фонд</h2>
+                <p><span class="article-number">4.1.</span> Призовой фонд Акции формируется Организатором и подлежит распределению между Участниками, признанными победителями.</p>
+                <p><span class="article-number">4.2.</span> <strong>Перечень призов:</strong></p>
+                <ul>
+                    <li><strong>1 место:</strong> Смартфон «iPhone 17» (или модель аналогичной рыночной стоимости) — 1 победитель</li>
+                    <li><strong>2-5 места:</strong> Топливный сертификат номиналом 100 литров бензина — 4 победителя</li>
+                    <li><strong>6-10 места:</strong> Набор инструментов (согласно спецификации Организатора) — 5 победителей</li>
+                    <li><strong>11-20 места:</strong> Компрессор автомобильный — 10 победителя</li>
+                </ul>
+                <p><span class="article-number">4.3.</span> Организатор оставляет за собой право заменить любой приз на равноценный (по рыночной стоимости) без отдельного уведомления.</p>
+                <p><span class="article-number">4.4.</span> Один Участник не может получить более одного приза. В случае повторного попадания присуждается высший приз.</p>
+
+                <h2>Статья 5. Порядок определения победителей</h2>
+                <p><span class="article-number">5.1.</span> Определение победителей осуществляется автоматизированным способом на Сайте Акции с использованием генератора случайных чисел (рандомайзера) среди всех Кодов, зарегистрированных в соответствии со Статьёй 3.</p>
+                <p><span class="article-number">5.2.</span> Дата и время проведения розыгрыша: 02.06.2026 с 10:00 до 12:00 по московскому времени.</p>
+                <p><span class="article-number">5.3.</span> Результаты розыгрыша публикуются на Сайте Акции xoilazs.ru в разделе «Победители» не позднее 05.06.2026.</p>
+
+                <h2>Статья 6. Порядок получения призов</h2>
+                <p><span class="article-number">6.1.</span> Организатор уведомляет победителей посредством телефонного звонка или SMS-сообщения по номеру, указанному при регистрации.</p>
+                <p><span class="article-number">6.2.</span> Для получения приза победитель обязан ответить на уведомление в течение 7 календарных дней и предоставить оригинал кассового чека, содержащего КОД-победитель.</p>
+                <p><span class="article-number">6.3.</span> Приз должен быть получен в течение 14 календарных дней после подтверждения права на приз.</p>
+
+                <h2>Статья 7. Налоговые обязательства</h2>
+                <p>Стоимость приза, превышающая 4 000 рублей, облагается налогом на доходы физических лиц (НДФЛ) в соответствии с Налоговым кодексом РФ. Организатор информирует победителя о необходимости декларирования дохода.</p>
+
+                <h2>Статья 8. Ответственность Организатора</h2>
+                <p>Организатор не несёт ответственности за технические сбои, утерю чеков Участником, действия операторов связи. Организатор вправе досрочно прекратить Акцию при форс-мажорных обстоятельствах.</p>
+
+                <h2>Статья 9. Персональные данные</h2>
+                <p>Участник даёт согласие на обработку персональных данных в целях проведения Акции. Срок обработки — 1 год с даты окончания Акции. Отзыв согласия влечёт исключение из числа Участников.</p>
+
+                <h2>Статья 10. Заключительные положения</h2>
+                <p>Настоящие Правила вступают в силу с даты публикации. Совершение действий по регистрации признаётся акцептом условий Акции. Споры разрешаются в претензионном порядке.</p>
+
+                <div class="legal-note">
+                    <i class="fas fa-balance-scale" style="margin-right: 10px; color:#FFD700;"></i> 
+                    <strong>Важно:</strong> Участие в акции означает полное и безоговорочное согласие с настоящими Правилами. Организатор рекомендует сохранить копию документа.
+                </div>
+
+                
+
+                <div style="text-align: center; margin-top: 32px;">
+                    <button class="download-pdf" id="downloadRulesBtn">
+                        <i class="fas fa-file-pdf"></i> Скачать правила (PDF)
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+                <div style="text-align: center;">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Вернуться на главную
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div style="margin-bottom: 12px; color: #FFD700; font-weight: 500;">© 2026 Сеть АЗС Xoil | Республика Башкортостан</div>
+        <div style="font-size: 12px; opacity: 0.6;">
+            <i class="fas fa-gas-pump"></i> Качественное топливо | <i class="fas fa-clock"></i> Круглосуточно | Акция «XOIL PRIZE»
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Функция генерации PDF (через html2canvas + jspdf — для демонстрации используется библиотека CDN)
+    // Для полноценной печати/сохранения используем встроенный print или динамическую генерацию, а также кнопку "печать"
+    // для максимального удобства — реализуем экспорт через window.print (стили для печати уже есть)
+    const downloadBtn = document.getElementById('downloadRulesBtn');
+    
+    downloadBtn.addEventListener('click', () => {
+        // Простой и надёжный способ: открыть диалог печати, где пользователь может сохранить как PDF.
+        // Добавляем временный заголовок для печати
+        const originalTitle = document.title;
+        document.title = "Xoil_Pravila_Akcii_XOIL_PRIZE.pdf";
+        window.print();
+        document.title = originalTitle;
+    });
+
+    // Дополнительно: плавная навигация по якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // навигационные ссылки с якорями на главной (корректный переход)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        const originalHref = link.getAttribute('href');
+        if (originalHref && originalHref.startsWith('#') && !originalHref.includes('index.html')) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = `index.html${originalHref}`;
+            });
+        }
+    });
+</script>
+
+<!-- Скрипты для печати не требуют дополнительных библиотек — печать через Ctrl+P или кнопку -->
+</body>
+</html>
