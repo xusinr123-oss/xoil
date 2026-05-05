@@ -9,7 +9,6 @@
     <!-- Яндекс Вебмастер -->
     <meta name="yandex-verification" content="3d630d1a3ff9911c" />
     
-    <!-- Favicon для вкладки браузера (logs.png) -->
     <link rel="icon" type="image/png" sizes="160x160" href="logs.png">
     <link rel="apple-touch-icon" sizes="160x160" href="logs.png">
     
@@ -78,6 +77,20 @@
             font-weight: 500;
             transition: all 0.3s ease;
             font-size: 15px;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
         .nav-link:hover {
             color: #FFD700;
@@ -101,121 +114,145 @@
             text-align: center;
         }
         .hero-title {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 800;
             background: linear-gradient(135deg, #FFFFFF, #FFD700);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 16px;
+            font-family: 'Manrope', sans-serif;
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 34px; }
+        }
+        .hero-subtitle {
+            font-size: 18px;
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto;
         }
         .prize-grid {
             display: flex;
             justify-content: center;
             gap: 24px;
             flex-wrap: wrap;
-            margin: 40px 0;
+            margin: 50px 0;
         }
         .prize-card {
-            background: rgba(10, 10, 0, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 20px;
-            width: 150px;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            border-radius: 24px;
+            padding: 24px 20px;
+            width: 160px;
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
         }
         .prize-card:hover {
             border-color: #FFD700;
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(255,215,0,0.15);
         }
         .prize-img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .prize-place {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             color: #FFD700;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
         }
         .prize-name {
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        @media (max-width: 640px) {
+            .prize-card { width: 140px; padding: 16px; }
+            .prize-img { width: 60px; height: 60px; }
         }
         .form-card {
-            background: #050505;
-            border-radius: 40px;
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            padding: 40px 32px;
-            max-width: 700px;
+            background: linear-gradient(145deg, #080808 0%, #020202 100%);
+            border-radius: 48px;
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            padding: 48px 40px;
+            max-width: 750px;
             margin: 30px auto;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.7);
+        }
+        @media (max-width: 640px) {
+            .form-card { padding: 32px 24px; }
         }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
             margin-bottom: 20px;
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-align: left;
         }
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
             color: #FFD700;
             font-size: 14px;
+            letter-spacing: 0.3px;
         }
         label .required {
-            color: #ff6666;
+            color: #ff8888;
             margin-left: 4px;
         }
         .code-hint {
             font-size: 11px;
-            color: #888;
-            margin-top: 5px;
-            margin-left: 12px;
+            color: #999;
+            margin-top: 8px;
+            margin-left: 16px;
         }
         input {
             width: 100%;
-            padding: 14px 18px;
-            background: #111;
-            border: 1px solid #333;
+            padding: 14px 20px;
+            background: #111111;
+            border: 1px solid #2a2a2a;
             border-radius: 60px;
             color: white;
             font-size: 16px;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
         input:focus {
             outline: none;
             border-color: #FFD700;
-            box-shadow: 0 0 10px rgba(255,215,0,0.3);
-        }
-        input:invalid {
-            border-color: #ff4444;
+            box-shadow: 0 0 12px rgba(255,215,0,0.2);
+            background: #0a0a0a;
         }
         .btn-submit {
             background: #FFD700;
             color: #010101;
             border: none;
-            padding: 16px 28px;
+            padding: 16px 32px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 800;
             border-radius: 60px;
             cursor: pointer;
             width: 100%;
-            transition: 0.3s;
-            margin-top: 10px;
+            transition: all 0.3s;
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
         }
         .btn-submit:hover {
-            background: #ffc107;
+            background: #ffcd38;
             transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+            gap: 16px;
+            box-shadow: 0 8px 25px rgba(255,215,0,0.35);
         }
         .btn-submit:disabled {
             opacity: 0.6;
@@ -223,55 +260,62 @@
             transform: none;
         }
         .info-steps {
-            background: rgba(255,215,0,0.05);
-            border-radius: 32px;
-            padding: 28px;
-            margin: 30px 0;
+            background: rgba(255,215,0,0.04);
+            border-radius: 36px;
+            padding: 32px;
+            margin: 40px 0;
             text-align: left;
-            border-left: 4px solid #FFD700;
+            border: 1px solid rgba(255,215,0,0.15);
+            backdrop-filter: blur(2px);
         }
         .steps-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 28px;
         }
         .step {
             flex: 1;
-            min-width: 180px;
-            background: #0a0a0a;
-            padding: 16px;
-            border-radius: 24px;
+            min-width: 170px;
+            background: rgba(0,0,0,0.6);
+            padding: 20px 16px;
+            border-radius: 28px;
             text-align: center;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            transition: 0.2s;
+        }
+        .step:hover {
+            border-bottom-color: #FFD700;
         }
         .step-number {
             background: #FFD700;
             color: #010101;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 60px;
-            font-weight: bold;
-            margin-bottom: 12px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            font-size: 18px;
         }
         .message {
-            padding: 16px;
+            padding: 14px 20px;
             border-radius: 60px;
-            margin-top: 20px;
+            margin-top: 24px;
             font-weight: 500;
             text-align: center;
         }
         .success {
             background: rgba(0,255,0,0.1);
-            border: 1px solid #00ff00;
+            border: 1px solid #00cc66;
             color: #aaffaa;
         }
         .error {
             background: rgba(255,0,0,0.1);
-            border: 1px solid #ff4444;
+            border: 1px solid #ff5555;
             color: #ffaaaa;
         }
         .warning {
@@ -281,21 +325,43 @@
         }
         .footer {
             text-align: center;
-            padding: 40px;
+            padding: 40px 24px;
             border-top: 1px solid rgba(255,215,0,0.2);
             margin-top: 40px;
+            background: #010101;
         }
         .rules-note {
             font-size: 12px;
             text-align: center;
-            margin-top: 20px;
-            opacity: 0.6;
+            margin-top: 24px;
+            opacity: 0.7;
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .rules-link {
+            color: #FFD700;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .rules-link:hover {
+            color: #ffcc33;
+            text-decoration: none;
+        }
+        .draw-date-badge {
+            background: rgba(255,215,0,0.12);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px dashed rgba(255,215,0,0.4);
         }
         @media (max-width: 768px) {
-            .hero-title { font-size: 32px; }
-            .prize-card { width: 130px; padding: 16px; }
-            .prize-img { width: 50px; height: 50px; }
             .form-row { grid-template-columns: 1fr; gap: 0; }
+            .steps-list { flex-direction: column; }
         }
     </style>
 </head>
@@ -319,36 +385,41 @@
 
 <main>
     <div class="container hero-tirage">
-        <h1 class="hero-title">🎲 Розыгрыш Xoil</h1>
-        <p style="font-size: 20px; opacity: 0.9;">Заполните форму и введите код с чека, чтобы участвовать в розыгрыше <strong style="color:#FFD700;">iPhone 17</strong> и других призов!</p>
+        <div class="draw-date-badge">
+            <i class="fas fa-calendar-check"></i> Итоги розыгрыша: <strong>5 июня 2026</strong>
+        </div>
+        <h1 class="hero-title">🏆 XOIL PRIZE 🏆</h1>
+        <p class="hero-subtitle">Заправляйся от 20 литров, получай код и выигрывай iPhone 17 и другие призы!<br>Участие простое — один чек = один шанс на победу.</p>
         
-        <!-- Призы с картинками 1.png, 2.png, 3.png, 4.png -->
+        <!-- Блок призов с картинками -->
         <div class="prize-grid">
             <div class="prize-card">
-                <img src="1.png" alt="iPhone 17" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=📱'">
+                <img src="1.png" alt="iPhone 17" class="prize-img" onerror="this.src='https://placehold.co/80x80?text=📱'">
                 <div class="prize-place">1 место</div>
                 <div class="prize-name">iPhone 17</div>
             </div>
             <div class="prize-card">
-                <img src="2.png" alt="Набор инструментов" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=🧰'">
+                <img src="4.png" alt="Набор инструментов" class="prize-img" onerror="this.src='https://placehold.co/80x80?text=🧰'">
                 <div class="prize-place">2-6 места</div>
-                <div class="prize-name">Набор инструментов</div>
+                <div class="prize-name">Набор инструментов Pro</div>
             </div>
             <div class="prize-card">
-                <img src="3.png" alt="Компрессор" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=🔧'">
+                <img src="2.png" alt="Компрессор" class="prize-img" onerror="this.src='https://placehold.co/80x80?text=🔧'">
                 <div class="prize-place">7-16 места</div>
                 <div class="prize-name">Компрессор</div>
             </div>
             <div class="prize-card">
-                <img src="4.png" alt="Бензин 100л" class="prize-img" onerror="this.src='https://placehold.co/70x70?text=⛽'">
+                <img src="3.png" alt="Бензин 100л" class="prize-img" onerror="this.src='https://placehold.co/80x80?text=⛽'">
                 <div class="prize-place">17-20 места</div>
-                <div class="prize-name">Бензин 20л</div>
+                <div class="prize-name">Топливо 100 литров</div>
             </div>
         </div>
         
         <!-- Форма регистрации -->
         <div class="form-card">
-            <h3 style="margin-bottom: 24px; text-align: center;">✨ Регистрация участника ✨</h3>
+            <h3 style="margin-bottom: 28px; text-align: center; font-size: 28px; font-family: 'Manrope', sans-serif;">
+                <i class="fas fa-pen-alt" style="color:#FFD700;"></i> Участвовать в розыгрыше
+            </h3>
             <form id="registerForm">
                 <div class="form-row">
                     <div class="form-group">
@@ -366,41 +437,45 @@
                 </div>
                 <div class="form-group">
                     <label>Код участника с чека <span class="required">*</span></label>
-                    <input type="text" id="promoCode" placeholder="123456789" required autocomplete="off" inputmode="numeric" pattern="[0-9]{9,10}">
-                    <div class="code-hint"><i class="fas fa-info-circle"></i> Код состоит только из цифр, 9 или 10 символов</div>
+                    <input type="text" id="promoCode" placeholder="123456789" required autocomplete="off" inputmode="numeric">
+                    <div class="code-hint"><i class="fas fa-info-circle"></i> Код состоит из 5–11 цифр (напечатан на чеке)</div>
                 </div>
-                <button type="submit" class="btn-submit"><i class="fas fa-gift"></i> Участвовать в розыгрыше</button>
+                <button type="submit" class="btn-submit"><i class="fas fa-gift"></i> Отправить и участвовать</button>
                 <div id="formMessage" class="message" style="display: none;"></div>
             </form>
             <div class="rules-note">
-                <i class="fas fa-shield-alt"></i> Один чек = один код = одна регистрация. <br>
-                Ваши данные используются только для определения победителя.
+                <span><i class="fas fa-shield-alt"></i> Ваши данные — только для розыгрыша</span>
+                <span><i class="fas fa-file-signature"></i> <a href="Xoilprize.html" class="rules-link" target="_blank">Правила акции «XOIL PRIZE»</a></span>
+                <span><i class="fas fa-chart-line"></i> 20 победителей</span>
             </div>
         </div>
         
         <!-- Как участвовать -->
         <div class="info-steps">
-            <h3><i class="fas fa-info-circle"></i> Как участвовать?</h3>
+            <h3><i class="fas fa-question-circle"></i> Как стать участником?</h3>
             <div class="steps-list">
-                <div class="step"><div class="step-number">1</div> Заправьтесь от 2 000 ₽</div>
-                <div class="step"><div class="step-number">2</div> Найдите уникальный код на чеке (9-10 цифр)</div>
-                <div class="step"><div class="step-number">3</div> Зарегистрируйтесь и введите код</div>
-                <div class="step"><div class="step-number">4</div> Ждите розыгрыша 31 мая!</div>
+                <div class="step"><div class="step-number">1</div> Заправьтесь <strong>от 20 литров</strong> на любой АЗС Xoil</div>
+                <div class="step"><div class="step-number">2</div> Возьмите чек с <strong>уникальным цифровым кодом</strong> (5–11 цифр)</div>
+                <div class="step"><div class="step-number">3</div> Заполните форму и введите код</div>
+                <div class="step"><div class="step-number">4</div> Ждите розыгрыша <strong>5 июня 2026</strong>!</div>
             </div>
-            <p style="margin-top: 20px;"><i class="fas fa-calendar-alt"></i> <strong>Сроки проведения:</strong> с 1 мая по 30 мая 2026 года.<br>
-            🏆 Победители будут объявлены 31 мая на сайте, в соцсетях и на постерах АЗС.</p>
+            <p style="margin-top: 28px; background: rgba(0,0,0,0.5); padding: 14px; border-radius: 28px; text-align: center;">
+                <i class="fas fa-trophy" style="color:#FFD700;"></i> <strong>Важно:</strong> один чек = одна регистрация. Повторная регистрация кода невозможна.<br>
+                Результаты будут опубликованы 5 июня на этом сайте и в наших соцсетях.
+            </p>
         </div>
     </div>
 </main>
 
 <footer class="footer">
-    <div>© 2026 Сеть АЗС Xoil | Розыгрыш iPhone 17 и призов</div>
-    <div style="font-size: 12px; margin-top: 10px;">Республика Башкортостан, Уфа. Акция проводится с 01.05 по 30.05.2026.</div>
+    <div>© 2026 Сеть АЗС Xoil | Стимулирующая акция «XOIL PRIZE»</div>
+    <div style="font-size: 13px; margin-top: 12px;">Республика Башкортостан, г. Уфа. Розыгрыш проводится с 1 мая по 5 июня 2026.<br>
+    Полные условия — на странице <a href="Xoilprize.html" class="rules-link" style="text-decoration:underline;">Xoilprize.html</a></div>
 </footer>
 
 <script>
     // ========================
-    // НАСТРОЙКА GOOGLE SCRIPT
+    // НАСТРОЙКА GOOGLE SCRIPT (та же ссылка)
     // ========================
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWnyZ3FbhfC3BPKtKt5LcPs6LEeLCDYnQ9Az_DokBMWKkXmXRw6YhIFM9TdSSpQdj92g/exec';
     
@@ -408,79 +483,54 @@
     const msgDiv = document.getElementById('formMessage');
     const promoCodeInput = document.getElementById('promoCode');
     
-    // Валидация телефона
     function validatePhone(phone) {
         const digits = phone.replace(/\D/g, '');
         return digits.length >= 10 && digits.length <= 12;
     }
     
-    // Валидация кода (только цифры, 9-10 символов)
+    // Функция валидации кода: от 5 до 11 цифр
     function validatePromoCode(code) {
         const digitsOnly = code.replace(/\D/g, '');
-        return digitsOnly.length >= 9 && digitsOnly.length <= 10;
+        return digitsOnly.length >= 5 && digitsOnly.length <= 11;
     }
     
-    // Очистка кода от НЕ цифр
     function cleanPromoCode(code) {
         return code.replace(/\D/g, '');
     }
     
-    // Проверка существующих кодов (локальный кеш)
     let existingCodes = new Set();
     
-    // Загружаем существующие коды из таблицы (через API)
     async function loadExistingCodes() {
         try {
-            // Получаем данные из Google Sheets через JSONP
-            const checkUrl = GOOGLE_SCRIPT_URL + '?action=getCodes&callback=loadCodesCallback';
-            
-            return new Promise((resolve) => {
-                const callbackName = 'loadCodesCallback_' + Date.now();
-                window[callbackName] = function(response) {
-                    delete window[callbackName];
-                    document.body.removeChild(script);
-                    if (response && response.codes) {
-                        existingCodes = new Set(response.codes);
-                    }
-                    resolve();
-                };
-                
-                const script = document.createElement('script');
-                script.src = GOOGLE_SCRIPT_URL + '?action=getCodes&callback=' + callbackName;
-                document.body.appendChild(script);
-                
-                setTimeout(() => {
-                    if (window[callbackName]) {
-                        window[callbackName]({ codes: [] });
-                    }
-                }, 3000);
-            });
-        } catch(e) {
-            console.log('Не удалось загрузить существующие коды');
-        }
+            const callbackName = 'loadCodesCallback_' + Date.now();
+            window[callbackName] = function(response) {
+                delete window[callbackName];
+                if (document.body.contains(script)) document.body.removeChild(script);
+                if (response && response.codes) {
+                    existingCodes = new Set(response.codes);
+                }
+            };
+            const script = document.createElement('script');
+            script.src = GOOGLE_SCRIPT_URL + '?action=getCodes&callback=' + callbackName;
+            document.body.appendChild(script);
+            setTimeout(() => {
+                if (window[callbackName]) window[callbackName]({ codes: [] });
+            }, 3000);
+        } catch(e) { console.log('Коды не загружены'); }
     }
-    
-    // Загружаем коды при загрузке страницы
     loadExistingCodes();
     
-    // Ограничиваем ввод только цифрами
+    // Автоочистка поля кода: только цифры, максимум 11 символов
     promoCodeInput.addEventListener('input', function(e) {
-        let value = e.target.value;
-        // Удаляем всё кроме цифр
-        let digitsOnly = value.replace(/\D/g, '');
-        // Ограничиваем 10 цифрами
-        if (digitsOnly.length > 10) {
-            digitsOnly = digitsOnly.slice(0, 10);
-        }
-        e.target.value = digitsOnly;
-        
-        // Визуальная подсказка о длине
-        if (digitsOnly.length >= 9 && digitsOnly.length <= 10) {
-            e.target.style.borderColor = '#00ff00';
-        } else if (digitsOnly.length > 0) {
-            e.target.style.borderColor = '#ff4444';
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 11) value = value.slice(0, 11);
+        e.target.value = value;
+        if (value.length >= 5 && value.length <= 11) {
+            e.target.style.borderColor = '#00cc66';
+        } else if (value.length > 0) {
+            e.target.style.borderColor = '#ff5555';
         } else {
-            e.target.style.borderColor = '#333';
+            e.target.style.borderColor = '#2a2a2a';
         }
     });
     
@@ -491,38 +541,23 @@
         const lastName = document.getElementById('lastName').value.trim();
         const phone = document.getElementById('phone').value.trim();
         let promoCodeRaw = document.getElementById('promoCode').value.trim();
-        
-        // Очищаем код от всего кроме цифр
         const promoCode = cleanPromoCode(promoCodeRaw);
         
         if (!firstName || !lastName) {
             showMessage('Пожалуйста, введите имя и фамилию', 'error');
             return;
         }
-        
-        if (!phone) {
-            showMessage('Пожалуйста, введите номер телефона', 'error');
+        if (!phone || !validatePhone(phone)) {
+            showMessage('Введите корректный номер телефона (10-12 цифр)', 'error');
             return;
         }
-        
-        if (!validatePhone(phone)) {
-            showMessage('Пожалуйста, введите корректный номер телефона (10-12 цифр)', 'error');
+        // Проверка длины кода (5-11 цифр)
+        if (!promoCode || !validatePromoCode(promoCode)) {
+            showMessage('Код должен содержать от 5 до 11 цифр. Пример: 12345678901', 'error');
             return;
         }
-        
-        if (!promoCode) {
-            showMessage('Пожалуйста, введите код с чека (только цифры)', 'error');
-            return;
-        }
-        
-        if (!validatePromoCode(promoCode)) {
-            showMessage('Код должен содержать 9 или 10 цифр. Пример: 123456789', 'error');
-            return;
-        }
-        
-        // Проверка на дубликат (локально)
         if (existingCodes.has(promoCode)) {
-            showMessage('❌ Этот код уже зарегистрирован! Один чек = один участник.', 'error');
+            showMessage('❌ Этот код уже зарегистрирован! Каждый чек участвует один раз.', 'error');
             return;
         }
         
@@ -533,20 +568,38 @@
         
         const now = new Date();
         const registrationDate = now.toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' });
-        
         let userIP = 'IP не определён';
         try {
             const ipResponse = await fetch('https://api.ipify.org?format=json');
             const ipData = await ipResponse.json();
             userIP = ipData.ip;
-        } catch(ipError) {
-            console.log('Не удалось определить IP');
-        }
-        
+        } catch(ipError) {}
         const userAgent = navigator.userAgent;
         
+        const callbackName = 'jsonp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6);
+        
+        window[callbackName] = function(response) {
+            delete window[callbackName];
+            if (script.parentNode) document.body.removeChild(script);
+            if (response.result === 'success') {
+                existingCodes.add(promoCode);
+                showMessage('✅ Регистрация успешна! Ваш код принят. Розыгрыш состоится 5 июня. Удачи!', 'success');
+                document.getElementById('firstName').value = '';
+                document.getElementById('lastName').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('promoCode').value = '';
+            } else if (response.error && response.error.includes('уже зарегистрирован')) {
+                existingCodes.add(promoCode);
+                showMessage('❌ ' + response.error, 'error');
+            } else {
+                showMessage('❌ ' + (response.error || 'Ошибка сервера. Попробуйте снова.'), 'error');
+            }
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        };
+        
         const params = new URLSearchParams();
-        params.append('callback', 'jsonp_callback');
+        params.append('callback', callbackName);
         params.append('firstName', firstName);
         params.append('lastName', lastName);
         params.append('phone', phone);
@@ -556,38 +609,13 @@
         params.append('userAgent', userAgent);
         params.append('timestamp', now.getTime());
         
-        const callbackName = 'jsonp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
-        
-        window[callbackName] = function(response) {
-            delete window[callbackName];
-            if (script.parentNode) document.body.removeChild(script);
-            
-            if (response.result === 'success') {
-                // Добавляем код в локальный Set, чтобы повторно не отправить
-                existingCodes.add(promoCode);
-                showMessage('✅ Регистрация успешна! Ваш код принят. Ждите розыгрыша 31 мая. Удачи!', 'success');
-                document.getElementById('firstName').value = '';
-                document.getElementById('lastName').value = '';
-                document.getElementById('phone').value = '';
-                document.getElementById('promoCode').value = '';
-            } else if (response.error && response.error.includes('уже зарегистрирован')) {
-                existingCodes.add(promoCode);
-                showMessage('❌ ' + response.error, 'error');
-            } else {
-                showMessage('❌ ' + (response.error || 'Ошибка регистрации. Попробуйте ещё раз.'), 'error');
-            }
-            
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        };
-        
         const script = document.createElement('script');
-        script.src = GOOGLE_SCRIPT_URL + '?' + params.toString().replace('callback=jsonp_callback', 'callback=' + callbackName);
+        script.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
         document.body.appendChild(script);
         
         setTimeout(() => {
             if (window[callbackName]) {
-                window[callbackName]({ result: 'error', error: 'Превышено время ожидания. Проверьте интернет-соединение.' });
+                window[callbackName]({ result: 'error', error: 'Превышено время ожидания. Проверьте интернет.' });
             }
         }, 15000);
     });
@@ -602,7 +630,6 @@
         }, 6000);
     }
     
-    // Маска для телефона
     const phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
