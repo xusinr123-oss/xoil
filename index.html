@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Xoil | Качественное топливо в Башкортостане — скидка 1₽ за литр</title>
-    <meta name="description" content="Сеть АЗС Xoil в Уфе и Башкортостане. Евро-5 топливо, скидка 1 рубль за литр при оплате наличными. Круглосуточно. Адреса, акции, розыгрыш iPhone 17!">
+    <title>Xoil | Итоги розыгрыша — iPhone 17 и 20 призов</title>
+    <meta name="description" content="Официальные итоги розыгрыша XOIL PRIZE: iPhone 17, 100 литров бензина, наборы инструментов и компрессоры. Список победителей!">
     <meta name="keywords" content="АЗС Уфа, купить бензин, дизельное топливо Уфа, скидка на бензин, качественное топливо, Xoil, заправка рядом">
     <meta name="author" content="Xoil">
     <meta name="robots" content="index, follow">
@@ -12,8 +12,8 @@
     <!-- Яндекс Вебмастер -->
     <meta name="yandex-verification" content="3d630d1a3ff9911c" />
     
-    <meta property="og:title" content="Xoil | Качественное топливо в Башкортостане">
-    <meta property="og:description" content="Скидка 1 рубль за литр наличными! Розыгрыш iPhone 17. Заправляйся выгодно с Xoil.">
+    <meta property="og:title" content="Xoil | Итоги розыгрыша — iPhone 17 и 20 призов!">
+    <meta property="og:description" content="Скидка 1 рубль за литр наличными! Опубликованы победители розыгрыша iPhone 17. Заправляйся выгодно с Xoil.">
     <meta property="og:image" content="https://xoilazs.ru/logs.png">
     <meta property="og:url" content="https://xoilazs.ru/">
     <meta property="og:type" content="website">
@@ -344,12 +344,14 @@
             color: #FFD700;
         }
 
+        /* НОВЫЙ КРАСИВЫЙ БЛОК ПОБЕДИТЕЛЕЙ */
         .giveaway-block {
-            background: #0a0a0a;
-            border-radius: 32px;
+            background: linear-gradient(145deg, #0a0a0a 0%, #030303 100%);
+            border-radius: 40px;
             padding: 40px 32px;
             text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.5);
         }
 
         @media (max-width: 768px) {
@@ -362,21 +364,23 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 215, 0, 0.1);
-            padding: 6px 16px;
+            background: rgba(255, 215, 0, 0.12);
+            padding: 8px 20px;
             border-radius: 60px;
             margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .giveaway-title {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 34px;
+            font-weight: 800;
             margin-bottom: 8px;
+            font-family: 'Manrope', sans-serif;
         }
 
         @media (max-width: 768px) {
             .giveaway-title {
-                font-size: 24px;
+                font-size: 26px;
             }
         }
 
@@ -384,44 +388,219 @@
             color: #FFD700;
         }
 
-        .prize-grid-gift {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin: 28px 0;
+        /* КАРТОЧКА 1 МЕСТА */
+        .grand-prize-card {
+            background: linear-gradient(135deg, #1f1a0a 0%, #0f0e05 100%);
+            border-radius: 32px;
+            padding: 28px 24px;
+            margin: 30px 0 40px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 30px rgba(255,215,0,0.25);
+            transition: all 0.3s ease;
+            animation: glowPulse 2s infinite;
         }
-
-        .prize-card-gift {
-            background: #010101;
-            border-radius: 20px;
-            padding: 16px;
-            text-align: center;
-            width: 120px;
-            border: 1px solid rgba(255, 215, 0, 0.15);
+        
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 20px rgba(255,215,0,0.2); border-color: #FFD700; }
+            50% { box-shadow: 0 0 40px rgba(255,215,0,0.5); border-color: #ffea80; }
+            100% { box-shadow: 0 0 20px rgba(255,215,0,0.2); border-color: #FFD700; }
         }
-
-        @media (max-width: 550px) {
-            .prize-card-gift {
-                width: 100px;
-                padding: 12px;
-            }
+        
+        .grand-prize-card:hover {
+            transform: scale(1.01);
         }
-
-        .prize-img {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
+        
+        .crown-icon {
+            font-size: 56px;
             margin-bottom: 10px;
+            animation: floatCrown 3s ease-in-out infinite;
+        }
+        
+        @keyframes floatCrown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .prize-name {
+            display: inline-block;
+            background: #FFD700;
+            color: #010101;
+            font-weight: 800;
+            padding: 8px 28px;
+            border-radius: 60px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .winner-name-large {
+            font-size: 38px;
+            font-weight: 800;
+            color: #FFD700;
+            margin: 12px 0 8px;
+            font-family: 'Manrope', sans-serif;
+            text-shadow: 0 0 15px rgba(255,215,0,0.3);
+        }
+        
+        .winner-phone-code {
+            background: rgba(255,215,0,0.1);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-family: monospace;
         }
 
-        @media (max-width: 550px) {
-            .prize-img {
-                width: 50px;
-                height: 50px;
+        /* СЕТКА ПРИЗОВ (2-5, 6-10, 11-20) */
+        .prize-tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 900px) {
+            .prize-tiers {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
-
+        
+        .tier-card {
+            background: rgba(0,0,0,0.5);
+            border-radius: 24px;
+            padding: 20px;
+            border: 1px solid rgba(255,215,0,0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            background: rgba(255,215,0,0.03);
+        }
+        
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+        
+        .tier-icon {
+            font-size: 32px;
+        }
+        
+        .tier-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FFD700;
+        }
+        
+        .tier-sub {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+        
+        .winners-list {
+            list-style: none;
+        }
+        
+        .winner-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(255,215,0,0.08);
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        
+        .winner-item:hover {
+            background: rgba(255,215,0,0.08);
+            border-radius: 12px;
+            padding-left: 12px;
+        }
+        
+        .winner-place {
+            font-weight: 600;
+            color: #aaa;
+            min-width: 35px;
+        }
+        
+        .winner-name {
+            font-weight: 500;
+            flex: 1;
+            text-align: left;
+            margin-left: 8px;
+        }
+        
+        .winner-digits {
+            font-family: monospace;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: #FFD700;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .prize-tiers, .grand-prize-card {
+            animation: fadeSlideUp 0.5s ease-out forwards;
+        }
+        
+        .winner-item {
+            animation: rowFade 0.3s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes rowFade {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Задержки для строк */
+        .tier-card:nth-child(1) .winner-item:nth-child(1) { animation-delay: 0.1s; }
+        .tier-card:nth-child(1) .winner-item:nth-child(2) { animation-delay: 0.15s; }
+        .tier-card:nth-child(1) .winner-item:nth-child(3) { animation-delay: 0.2s; }
+        .tier-card:nth-child(1) .winner-item:nth-child(4) { animation-delay: 0.25s; }
+        .tier-card:nth-child(2) .winner-item:nth-child(1) { animation-delay: 0.3s; }
+        .tier-card:nth-child(2) .winner-item:nth-child(2) { animation-delay: 0.35s; }
+        .tier-card:nth-child(2) .winner-item:nth-child(3) { animation-delay: 0.4s; }
+        .tier-card:nth-child(2) .winner-item:nth-child(4) { animation-delay: 0.45s; }
+        .tier-card:nth-child(2) .winner-item:nth-child(5) { animation-delay: 0.5s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(1) { animation-delay: 0.55s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(2) { animation-delay: 0.6s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(3) { animation-delay: 0.65s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(4) { animation-delay: 0.7s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(5) { animation-delay: 0.75s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(6) { animation-delay: 0.8s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(7) { animation-delay: 0.85s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(8) { animation-delay: 0.9s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(9) { animation-delay: 0.95s; }
+        .tier-card:nth-child(3) .winner-item:nth-child(10) { animation-delay: 1.0s; }
+        
         .giveaway-steps {
             display: flex;
             justify-content: center;
@@ -439,13 +618,12 @@
             border-radius: 60px;
             border: 1px solid rgba(255, 215, 0, 0.15);
             font-size: 13px;
+            transition: all 0.2s;
         }
-
-        @media (max-width: 550px) {
-            .step-item-gift {
-                font-size: 11px;
-                padding: 6px 12px;
-            }
+        
+        .step-item-gift:hover {
+            border-color: #FFD700;
+            transform: translateY(-2px);
         }
 
         .step-number-gift {
@@ -459,25 +637,6 @@
             font-size: 12px;
             font-weight: 700;
             color: #FFD700;
-        }
-
-        .giveaway-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #FFD700;
-            color: #010101;
-            font-weight: 700;
-            font-size: 16px;
-            padding: 12px 28px;
-            border-radius: 60px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .giveaway-btn:hover {
-            background: #ffc107;
-            gap: 14px;
         }
 
         .giveaway-date {
@@ -496,12 +655,6 @@
             padding: 40px 32px;
             text-align: center;
             border: 1px solid rgba(255, 215, 0, 0.35);
-        }
-
-        @media (max-width: 768px) {
-            .promo-block {
-                padding: 28px 20px;
-            }
         }
 
         .fuel-types {
@@ -617,7 +770,7 @@
             margin: 20px 0;
         }
 
-        /* МОДАЛЬНОЕ ОКНО — ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ И ПЕРСОНАЛЬНЫЕ ДАННЫЕ */
+        /* Модальное окно */
         #consentModal {
             display: none;
             position: fixed;
@@ -640,16 +793,8 @@
             border-radius: 28px;
             border: 1px solid rgba(255,215,0,0.35);
             padding: 28px 24px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             overflow-y: auto;
             max-height: 85vh;
-        }
-
-        @media (max-width: 550px) {
-            .modal-content {
-                padding: 20px 16px;
-                width: 95%;
-            }
         }
 
         .modal-title {
@@ -658,34 +803,12 @@
             text-align: center;
             margin-bottom: 16px;
             color: #FFD700;
-            font-family: 'Manrope', sans-serif;
         }
 
         .modal-text {
             font-size: 13px;
             line-height: 1.5;
-            opacity: 0.9;
             margin-bottom: 24px;
-        }
-
-        .modal-text p {
-            margin-bottom: 12px;
-        }
-
-        .modal-text strong {
-            color: #FFD700;
-        }
-
-        .rules-link-modal {
-            color: #FFD700;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        .rules-link-modal:hover {
-            color: #ffcc33;
-            text-decoration: none;
         }
 
         .modal-buttons {
@@ -693,7 +816,6 @@
             gap: 14px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 8px;
         }
 
         .btn-accept {
@@ -704,13 +826,6 @@
             border-radius: 60px;
             font-weight: 700;
             cursor: pointer;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-
-        .btn-accept:hover {
-            background: #ffcd38;
-            transform: scale(1.02);
         }
 
         .btn-decline {
@@ -721,12 +836,6 @@
             border-radius: 60px;
             font-weight: 700;
             cursor: pointer;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-
-        .btn-decline:hover {
-            background: rgba(255, 215, 0, 0.08);
         }
     </style>
 </head>
@@ -809,18 +918,95 @@
         </div>
     </section>
 
-    <!-- БЛОК РОЗЫГРЫША -->
+    <!-- КРАСИВЫЙ БЛОК ПОБЕДИТЕЛЕЙ -->
     <section class="section" style="background: #010101;">
         <div class="container">
             <div class="giveaway-block">
                 <div class="giveaway-badge">
-                    <span>🏆</span> Проведение акции закончено<span>🎲</span>
+                    <span>🏆</span> Официальные итоги <span>🎲</span>
                 </div>
                 <div class="giveaway-title">
-                    <span class="highlight">Победители будут объявлены 05.06 на сайте.</span>
+                    <span class="highlight">20 победителей</span> акции XOIL PRIZE
                 </div>
-
-            
+                <p style="margin-bottom: 10px; font-size: 14px; opacity:0.8;">Спасибо каждому участнику! Вот имена счастливчиков и последние цифры телефонов:</p>
+                
+                <!-- 1 МЕСТО — iPhone 17 -->
+                <div class="grand-prize-card">
+                    <div class="crown-icon">👑</div>
+                    <div class="prize-name"><i class="fab fa-apple"></i> 1 МЕСТО — iPhone 17</div>
+                    <div class="winner-name-large">Руслан</div>
+                    <div class="winner-phone-code">📱 Код телефона: **00-61</div>
+                </div>
+                
+                <!-- КАТЕГОРИИ ПРИЗОВ -->
+                <div class="prize-tiers">
+                    <!-- 2-5 места: 100 литров бензина -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <span class="tier-icon">⛽️</span>
+                            <div>
+                                <div class="tier-title">2 – 5 места</div>
+                                <div class="tier-sub">100 литров бензина</div>
+                            </div>
+                        </div>
+                        <ul class="winners-list">
+                            <li class="winner-item"><span class="winner-place">2.</span> <span class="winner-name">Ринат</span> <span class="winner-digits">**09-99</span></li>
+                            <li class="winner-item"><span class="winner-place">3.</span> <span class="winner-name">Роберт</span> <span class="winner-digits">**53-32</span></li>
+                            <li class="winner-item"><span class="winner-place">4.</span> <span class="winner-name">Владимир</span> <span class="winner-digits">**92-74</span></li>
+                            <li class="winner-item"><span class="winner-place">5.</span> <span class="winner-name">Ильнара</span> <span class="winner-digits">**35-72</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 6-10 места: Набор инструментов -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <span class="tier-icon">🧰</span>
+                            <div>
+                                <div class="tier-title">6 – 10 места</div>
+                                <div class="tier-sub">Набор инструментов</div>
+                            </div>
+                        </div>
+                        <ul class="winners-list">
+                            <li class="winner-item"><span class="winner-place">6.</span> <span class="winner-name">Айдар</span> <span class="winner-digits">**66-27</span></li>
+                            <li class="winner-item"><span class="winner-place">7.</span> <span class="winner-name">Алексей</span> <span class="winner-digits">**13-27</span></li>
+                            <li class="winner-item"><span class="winner-place">8.</span> <span class="winner-name">Ринат</span> <span class="winner-digits">**09-99</span></li>
+                            <li class="winner-item"><span class="winner-place">9.</span> <span class="winner-name">Камиль</span> <span class="winner-digits">**02-02</span></li>
+                            <li class="winner-item"><span class="winner-place">10.</span> <span class="winner-name">Павел</span> <span class="winner-digits">**88-99</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 11-20 места: Компрессор -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <span class="tier-icon">🛞</span>
+                            <div>
+                                <div class="tier-title">11 – 20 места</div>
+                                <div class="tier-sub">Автомобильный компрессор</div>
+                            </div>
+                        </div>
+                        <ul class="winners-list">
+                            <li class="winner-item"><span class="winner-place">11.</span> <span class="winner-name">Рафис</span> <span class="winner-digits">**05-64</span></li>
+                            <li class="winner-item"><span class="winner-place">12.</span> <span class="winner-name">Артур</span> <span class="winner-digits">**33-3?</span></li>
+                            <li class="winner-item"><span class="winner-place">13.</span> <span class="winner-name">Артур</span> <span class="winner-digits">**27-17</span></li>
+                            <li class="winner-item"><span class="winner-place">14.</span> <span class="winner-name">Вадим</span> <span class="winner-digits">**19-39</span></li>
+                            <li class="winner-item"><span class="winner-place">15.</span> <span class="winner-name">Ильдар</span> <span class="winner-digits">**19-86</span></li>
+                            <li class="winner-item"><span class="winner-place">16.</span> <span class="winner-name">Наиль</span> <span class="winner-digits">**82-18</span></li>
+                            <li class="winner-item"><span class="winner-place">17.</span> <span class="winner-name">Ринат</span> <span class="winner-digits">**21-15</span></li>
+                            <li class="winner-item"><span class="winner-place">18.</span> <span class="winner-name">Алия</span> <span class="winner-digits">**19-54</span></li>
+                            <li class="winner-item"><span class="winner-place">19.</span> <span class="winner-name">Дмитрий</span> <span class="winner-digits">**98-00</span></li>
+                            <li class="winner-item"><span class="winner-place">20.</span> <span class="winner-name">Рустам</span> <span class="winner-digits">**10-36</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="giveaway-steps">
+                    
+                </div>
+                <div class="giveaway-date">
+               
+                    <span><i class="fas fa-trophy"></i> Победители определены случайным образом</span>
+                </div>
+                <p style="margin-top: 20px; font-size: 12px; opacity:0.6;"><i class="fas fa-phone-alt"></i> Организаторы свяжутся с победителями по указанным номерам</p>
             </div>
         </div>
     </section>
@@ -877,29 +1063,23 @@
     </div>
 </footer>
 
-<!-- МОДАЛЬНОЕ ОКНО СОГЛАСИЯ С ПРАВИЛАМИ И ПЕРСОНАЛЬНЫМИ ДАННЫМИ -->
 <div id="consentModal">
     <div class="modal-content">
         <div class="modal-title">📜 Условия участия в акции</div>
         <div class="modal-text">
-            <p><strong>Уважаемый клиент!</strong> Для участия в розыгрыше призов и использования сайта <strong>xoilazs.ru</strong> необходимо подтвердить согласие с правилами.</p>
+            <p><strong>Уважаемый клиент!</strong> Для участия в розыгрыше призов и использования сайта необходимо подтвердить согласие с правилами.</p>
             <p><strong>✅ Вы соглашаетесь:</strong><br>
-            • С <a href="Xoilprize.html" class="rules-link-modal" target="_blank">Правилами проведения акции «XOIL PRIZE»</a> (полный текст документа).<br>
-            • На обработку персональных данных (фамилия, имя, номер телефона) для определения победителей, связи с ними и доставки призов.<br>
-            • С тем, что призы могут облагаться налогом согласно НК РФ (стоимость свыше 4000₽).<br>
-            • С публикацией результатов розыгрыша в обезличенном виде на Сайте.</p>
-            <p><strong>📌 Важно:</strong> один кассовый чек = один уникальный код. Регистрация кода означает полное принятие правил. Организатор не передаёт данные третьим лицам, кроме случаев, предусмотренных законом.</p>
-            <p><i class="fas fa-lock" style="color:#FFD700;"></i> <strong>Конфиденциальность гарантирована.</strong> Вы можете отозвать согласие письменно, но это прекратит участие в акции.</p>
+            • С <a href="Xoilprize.html" class="rules-link-modal" target="_blank" style="color:#FFD700;">Правилами проведения акции «XOIL PRIZE»</a>.<br>
+            • На обработку персональных данных (имя, номер телефона) для определения победителей и связи с ними.</p>
         </div>
         <div class="modal-buttons">
-            <button class="btn-accept" id="acceptConsent">✅ Принимаю и участвую</button>
+            <button class="btn-accept" id="acceptConsent">✅ Принимаю</button>
             <button class="btn-decline" id="declineConsent">❌ Отказаться</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Плавная прокрутка для якорей
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -912,24 +1092,19 @@
         });
     });
 
-    // Логика модального окна согласия (Правила + персональные данные)
     const modal = document.getElementById('consentModal');
-    
     function checkConsent() {
-        const consentGiven = localStorage.getItem('xoil_consent_full');
-        if (!consentGiven) {
+        if (!localStorage.getItem('xoil_consent_full')) {
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
     }
-    
     function acceptConsent() {
         localStorage.setItem('xoil_consent_full', 'accepted');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-        // Показываем короткое уведомление (опционально)
-        const toast = document.createElement('div');
-        toast.textContent = 'Спасибо! Вы приняли условия. Участвуйте в розыгрыше!';
+        let toast = document.createElement('div');
+        toast.textContent = 'Спасибо! Результаты розыгрыша опубликованы!';
         toast.style.position = 'fixed';
         toast.style.bottom = '20px';
         toast.style.left = '50%';
@@ -939,26 +1114,20 @@
         toast.style.padding = '10px 20px';
         toast.style.borderRadius = '60px';
         toast.style.fontWeight = 'bold';
-        toast.style.fontSize = '14px';
         toast.style.zIndex = '1001';
-        toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
         document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3500);
+        setTimeout(() => toast.remove(), 3000);
     }
-    
     function declineConsent() {
         localStorage.setItem('xoil_consent_full', 'declined');
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-        alert('Вы отказались от участия в розыгрыше и обработки персональных данных. Функционал участия в акции для вас недоступен. При желании вы можете изменить решение, очистив данные сайта в браузере.');
+        alert('Вы отказались от обработки данных. Список победителей доступен.');
     }
-    
-    document.getElementById('acceptConsent').addEventListener('click', acceptConsent);
-    document.getElementById('declineConsent').addEventListener('click', declineConsent);
-    
+    document.getElementById('acceptConsent')?.addEventListener('click', acceptConsent);
+    document.getElementById('declineConsent')?.addEventListener('click', declineConsent);
     checkConsent();
 
-    // Анимация карточек преимуществ
     const cards = document.querySelectorAll('.info-card');
     cards.forEach((card, idx) => {
         card.style.opacity = '0';
