@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Xoil | Акция XOIL PRIZE — 100 призов</title>
-<meta name="description" content="Акция 100 призов от сети АЗС Xoil. С 20 октября по 20 декабря. Зарегистрируйте код с чека и участвуйте!">
+<title>Xoil | Акция «100 причин заправиться»</title>
+<meta name="description" content="Акция «100 причин заправиться» от сети АЗС Xoil. С 20 октября по 20 декабря. Зарегистрируйте код с чека и участвуйте!">
 <link rel="icon" type="image/png" sizes="160x160" href="logs.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -441,13 +441,69 @@ input,button{font-family:inherit}
 }
 .field.has-error .field-hint{color:var(--err)}
 
+/* Чекбокс согласия */
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 8px 0 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.consent-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  position: relative;
+  transition: all .2s ease;
+}
+.consent-row input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.consent-row input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #010101;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+}
+.consent-row input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.consent-text {
+  font-size: 12px;
+  color: var(--ink-dim);
+  line-height: 1.5;
+}
+.consent-text a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 215, 0, 0.4);
+}
+.consent-text a:hover {
+  border-bottom-style: solid;
+}
+
 .btn-submit{
   margin-top:6px;width:100%;padding:17px;
   font-size:16px;font-weight:800;letter-spacing:.3px;
   color:#0a0a0a;
   background:linear-gradient(135deg,#FFD700 0%,#ff9500 60%,#ff3d7f 130%);
   border:none;border-radius:14px;cursor:pointer;
-  transition:transform .25s ease,box-shadow .25s ease;
+  transition:transform .25s ease,box-shadow .25s ease,opacity .2s ease;
   box-shadow:0 12px 30px rgba(255,149,0,.35);
   position:relative;overflow:hidden;
 }
@@ -458,6 +514,7 @@ input,button{font-family:inherit}
 .btn-submit:active:not(:disabled){transform:translateY(0)}
 .btn-submit:disabled{
   background:#2a2a2a;color:#777;box-shadow:none;cursor:not-allowed;
+  opacity: 0.7;
 }
 .form-msg{margin-top:14px;font-size:14px;text-align:center;min-height:22px;transition:color .2s ease}
 .rules-note{
@@ -523,14 +580,13 @@ input,button{font-family:inherit}
 <main>
   <section class="hero">
     <div class="container">
-      <div class="badge">✨ XOIL PRIZE · 2026 · 100 призов ✨</div>
+      <div class="badge">✨ 100 ПРИЧИН ЗАПРАВИТЬСЯ · 2026 ✨</div>
       <h1>
         <span class="line">Заправляйся.</span>
         <span class="line grad">Выигрывай.</span>
       </h1>
       <p>Каждый чек с АЗС Xoil — это шанс на один из 100 призов. Планшет, смартфон, умные часы, бензин и фирменный мерч ждут победителей.</p>
       
-      <!-- Плашка с датами -->
       <div class="dates-banner">
         <i class="far fa-calendar-alt"></i> 20 октября — 20 декабря
       </div>
@@ -546,7 +602,6 @@ input,button{font-family:inherit}
       <div class="section-label">Призовой фонд</div>
       <h2 class="section-title">100 призов для вас</h2>
       
-      <!-- Даты под заголовком -->
       <div class="section-dates">
         <span><i class="fas fa-calendar-check"></i> Приём чеков: 20.10 – 20.12</span>
         <span><i class="fas fa-bullhorn"></i> Итоги: 25.12 на сайте</span>
@@ -620,13 +675,23 @@ input,button{font-family:inherit}
               <span class="field-hint" id="hintCode">Только цифры, от 8 до 11</span>
             </div>
 
-            <button type="submit" class="btn-submit" id="submitBtn">🎁 Участвовать</button>
+            <!-- Чекбокс согласия -->
+            <label class="consent-row" for="consentCheck">
+              <input type="checkbox" id="consentCheck" required>
+              <span class="consent-text">
+                Я ознакомлен(а) и согласен(на) с
+                <a href="Xoilprize.html" target="_blank">правилами акции «100 причин заправиться»</a>
+                и обработкой персональных данных
+              </span>
+            </label>
+
+            <button type="submit" class="btn-submit" id="submitBtn" disabled>🎁 Участвовать</button>
             <div class="form-msg" id="formMsg"></div>
           </form>
 
           <p class="rules-note">
             Отправляя форму, вы соглашаетесь с
-            <a href="Xoilprize.html" target="_blank">правилами акции «XOIL PRIZE»</a>
+            <a href="Xoilprize.html" target="_blank">правилами акции «100 причин заправиться»</a>
             и обработкой персональных данных.
           </p>
         </div>
@@ -648,6 +713,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxMWZ_7rz9qDr4Vy5yWQ
 const form       = document.getElementById("giveawayForm");
 const formMsg    = document.getElementById("formMsg");
 const submitBtn  = document.getElementById("submitBtn");
+const consent    = document.getElementById("consentCheck");
 const fioInput   = document.getElementById("fio");
 const phoneInput = document.getElementById("phone");
 const codeInput  = document.getElementById("receiptCode");
@@ -657,6 +723,13 @@ const fieldCode  = document.getElementById("fieldCode");
 const hintFio    = document.getElementById("hintFio");
 const hintPhone  = document.getElementById("hintPhone");
 const hintCode   = document.getElementById("hintCode");
+
+/* ====== БЛОКИРОВКА КНОПКИ ДО СОГЛАСИЯ ====== */
+function updateSubmitState() {
+  submitBtn.disabled = !consent.checked;
+}
+consent.addEventListener("change", updateSubmitState);
+updateSubmitState(); // при загрузке
 
 /* ====== МАСКА ТЕЛЕФОНА ====== */
 function formatPhone(raw){
@@ -887,6 +960,13 @@ form.addEventListener("submit", async (e) => {
   formMsg.textContent = "";
   formMsg.style.color = "";
 
+  // Дополнительная проверка на случай обхода
+  if (!consent.checked) {
+    formMsg.textContent = "Необходимо согласиться с правилами акции.";
+    formMsg.style.color = "#ff6b6b";
+    return;
+  }
+
   const fio         = fioInput.value.trim().replace(/\s+/g, " ");
   const phone       = phoneInput.value.replace(/\D/g, "");
   const receiptCode = codeInput.value.trim();
@@ -925,6 +1005,8 @@ form.addEventListener("submit", async (e) => {
       formMsg.style.color = "#4ade80";
       launchConfetti();
       form.reset();
+      consent.checked = false;
+      updateSubmitState();
       hintFio.textContent   = "Например: Иванов Иван или Иванов Иван Иванович";
       hintPhone.textContent = "Формат: +7 988 888-88-80";
       hintCode.textContent  = "Только цифры, от 8 до 11";
@@ -937,8 +1019,8 @@ form.addEventListener("submit", async (e) => {
     formMsg.textContent = "Не удалось отправить данные. Попробуйте позже.";
     formMsg.style.color = "#ff6b6b";
   } finally {
-    submitBtn.disabled = false;
     submitBtn.textContent = "🎁 Участвовать";
+    updateSubmitState();
   }
 });
 </script>
